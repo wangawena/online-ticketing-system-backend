@@ -7,4 +7,12 @@
     <select id="selectUser" resultType="com.onlineTicketingSystem.pojo.User">
         select * from user where username=#{username} and password=#{password};
     </select>
+
+    <select id="selectByUsername" resultType="String">
+        select count(*) from user where username=#{username};
+    </select>
+
+    <select id="createUser">
+        insert into user(username,password) values(#{username},#{password});
+    </select>
 </mapper>

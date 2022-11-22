@@ -8,6 +8,7 @@ import com.onlineTicketingSystem.server.UserServer;
 import com.onlineTicketingSystem.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +19,7 @@ public class UserController {
     @Autowired
     UserServer userServer;
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public Result login(User user)
     {
         Result result=new Result();
@@ -42,5 +43,16 @@ public class UserController {
             result.setData(token);
         }
         return result;
+    }
+
+    @PostMapping("/register")
+    public Result register(User user)
+    {
+        Result result=new Result();
+        result.setMsg("flase");
+        result.setCode(userServer.createUser(user));
+        if(result.getCode()==200)
+            result.setMsg("true");
+        return  result;
     }
 }

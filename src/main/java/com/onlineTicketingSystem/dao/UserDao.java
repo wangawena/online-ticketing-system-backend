@@ -8,6 +8,14 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserDao {
 
-
+    //查询用户
     public User selectUser(User user);
+
+
+    //根据用户名查询用户
+    public String selectByUsername(String username);
+
+    //新增用户
+    public void  createUser(User user);
+
 }

@@ -1,5 +1,7 @@
 package com.onlineTicketingSystem.pojo;
 
+import java.util.List;
+
 public class Moive {
     private String name;//电影名
     private Classify classify;
@@ -10,7 +12,7 @@ public class Moive {
 
     private Description description;
 
-    private Location[] location;
+    private List<Location> location;
 
 
     public String getName() {
@@ -61,11 +63,12 @@ public class Moive {
         this.description = description;
     }
 
-    public Location[] getLocation() {
+
+    public List<Location> getLocation() {
         return location;
     }
 
-    public void setLocation(Location[] location) {
+    public void setLocation(List<Location> location) {
         this.location = location;
     }
 }

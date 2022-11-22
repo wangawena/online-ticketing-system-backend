@@ -1,7 +1,9 @@
 package com.onlineTicketingSystem.controller;
 
+import com.onlineTicketingSystem.pojo.Classify;
 import com.onlineTicketingSystem.pojo.Location;
 import com.onlineTicketingSystem.pojo.Moive;
+import com.onlineTicketingSystem.server.ClassifyServer;
 import com.onlineTicketingSystem.server.LocationServer;
 import com.onlineTicketingSystem.server.MovieServer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,9 @@ public class MovieController {
     @Autowired
     LocationServer locationServer;
 
+    @Autowired
+    ClassifyServer classifyServer;
+
     @GetMapping("/findAll")
     public List<Moive> findAll()
     {
@@ -31,10 +36,16 @@ public class MovieController {
         int size=moiveList.size();
         for(int i=0;i<size;i++)
         {
-            List<Location> locationList=new ArrayList<>();
             String name=moiveList.get(i).getName();
+
+            List<Location> locationList=new ArrayList<>();
             locationList=locationServer.findAllLocationByName(name);
             moiveList.get(i).setLocation(locationList);
+
+            Classify classify=new Classify();
+            classify=classifyServer.findAllClassifyByName(name);
+            moiveList.get(i).setClassify(classify);
+
         }
 
         return moiveList;

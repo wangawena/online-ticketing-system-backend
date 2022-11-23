@@ -15,9 +15,12 @@
     <select id="createUser">
         insert into user(username,password) values(#{username},#{password});
     </select>
+<<<<<<< HEAD
 
 
     <select id="findAllUesr" resultType="String">
         select username from user;
     </select>
+=======
+>>>>>>> fb62187ea2a516bc84e041260b64858f1b6012ea
 </mapper>

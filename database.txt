@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 create database ots;
 
 create table `user`(
@@ -79,6 +80,6 @@ insert into galleryuri values("扫黑行动","https://p0.pipi.cn/mmdb/25bfd6922f
 insert into actosuri values("扫黑行动","https://p0.pipi.cn/basicdata/25bfd69251b923c7ed5015671e7a3959dd1c3.jpg?imageView2/1/w/464/h/644");
 insert into actosuri values("扫黑行动","https://p0.pipi.cn/basicdata/25bfd6d753706dddd207ac3488c640d4734ac.jpg?imageView2/1/w/464/h/644");
 insert into actosuri values("扫黑行动","https://p0.pipi.cn/basicdata/25bfd6d753706d339e0e139cdc14e4ee93d89.jpg?imageView2/1/w/464/h/644'");
-insert into seats values("扫黑行动","成华区建设路26号第五大道4栋4楼","1,1 2,2 3,7");
+insert into seats values("扫黑行动","成华区建设路26号第五大道4栋4楼","1,1 2,2 3,4");
 
 

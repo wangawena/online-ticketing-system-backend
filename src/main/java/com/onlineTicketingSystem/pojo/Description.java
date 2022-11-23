@@ -1,27 +1,32 @@
 package com.onlineTicketingSystem.pojo;
 
+import java.util.List;
+
 public class Description {
-    private String[] actor;
-    private String[] gallery;
+    private List<String> actor;
+    private List<String> gallery;
     private String text;
     private String comments;
-    private String actors;
 
-    public String[] getActor() {
-        return actor;
-    }
-
-    public void setActor(String[] actor) {
-        this.actor = actor;
-    }
-
-    public String[] getGallery() {
+    public List<String> getGallery() {
         return gallery;
     }
 
-    public void setGallery(String[] gallery) {
+    public void setGallery(List<String> gallery) {
         this.gallery = gallery;
     }
+
+    public List<String> getActor() {
+        return actor;
+    }
+
+    public void setActor(List<String> actor) {
+        this.actor = actor;
+    }
+
+    private String actors;
+
+
 
     public String getText() {
         return text;

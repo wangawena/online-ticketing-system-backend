@@ -15,4 +15,9 @@
     <select id="createUser">
         insert into user(username,password) values(#{username},#{password});
     </select>
+
+
+    <select id="findAllUesr" resultType="String">
+        select username from user;
+    </select>
 </mapper>

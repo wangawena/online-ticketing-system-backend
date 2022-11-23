@@ -6,6 +6,8 @@ import com.onlineTicketingSystem.server.UserServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserServerImpl implements UserServer {
 
@@ -27,11 +29,16 @@ public class UserServerImpl implements UserServer {
         existUser= userDao.selectByUsername(user.getUsername());
         System.out.println("UserServerImpl exitUser:"+existUser);
         if(Integer.parseInt(existUser)!=0)
-            return 202;//用户名重复
+            return 402;//用户名重复
         else
         {
             userDao.createUser(user);
             return 200;
         }
+    }
+
+    @Override
+    public List<String> findAllUSer() {
+        return userDao.findAllUesr();
     }
 }

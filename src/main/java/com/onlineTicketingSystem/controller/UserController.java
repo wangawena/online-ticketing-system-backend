@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class UserController {
@@ -53,6 +55,22 @@ public class UserController {
         result.setCode(userServer.createUser(user));
         if(result.getCode()==200)
             result.setMsg("注册成功");
+        else if(result.getCode()==402)
+            result.setMsg("账户名已存在");
         return  result;
     }
+
+    @PostMapping("/user/findAllUserPost")
+    public List<String> findAllUserPost()
+    {
+        return userServer.findAllUSer();
+    }
+
+
+    @GetMapping("/user/findAllUserGet")
+    public List<String> findAllUserGet()
+    {
+        return userServer.findAllUSer();
+    }
+
 }

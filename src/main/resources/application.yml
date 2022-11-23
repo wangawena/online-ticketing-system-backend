@@ -12,3 +12,7 @@ spring:
 mybatis:
   mapper-locations: mapper/*.xml
   type-aliases-package: com.onlineTicketingSystem.pojo
+
+
+seatsx: 5
+seatsy: 6

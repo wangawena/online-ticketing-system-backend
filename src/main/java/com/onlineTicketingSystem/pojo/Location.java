@@ -2,7 +2,7 @@ package com.onlineTicketingSystem.pojo;
 
 public class Location {
     private String information;
-    private String[] seats;
+    private String[][] seats;
     private String date;
     private String brand;
     private String district;
@@ -105,11 +105,12 @@ public class Location {
         this.room = room;
     }
 
-    public String[] getSeats() {
+
+    public String[][] getSeats() {
         return seats;
     }
 
-    public void setSeats(String[] seats) {
+    public void setSeats(String[][] seats) {
         this.seats = seats;
     }
 }

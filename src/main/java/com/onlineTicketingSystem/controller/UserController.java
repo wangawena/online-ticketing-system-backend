@@ -1,11 +1,11 @@
 package com.onlineTicketingSystem.controller;
 
 
-import com.onlineTicketingSystem.pojo.Result;
-import com.onlineTicketingSystem.pojo.Token;
-import com.onlineTicketingSystem.pojo.User;
+import com.onlineTicketingSystem.pojo.*;
+import com.onlineTicketingSystem.server.InformationServer;
 import com.onlineTicketingSystem.server.UserServer;
 import com.onlineTicketingSystem.util.JWTUtil;
+import com.sun.org.apache.xpath.internal.operations.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +20,10 @@ public class UserController {
 
     @Autowired
     UserServer userServer;
+
+    @Autowired
+    InformationServer informationServer;
+
 
     @PostMapping("/login")
     public Result login(User user)
@@ -67,8 +71,11 @@ public class UserController {
     }
 
     @GetMapping("/user/findAllUserGet")
-    public List<String> findAllUserGet()
+    public Order findAllUserGet(String username)
     {
-        return userServer.findAllUSer();
+        Order order=new Order();
+        order.setUsername(username);
+        order.setInformation(informationServer.findInformationByName(username));
+        return order;
     }
 }

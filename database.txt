@@ -93,4 +93,10 @@ insert into seats values(1,"成华区建设路26号第五大道4栋4楼","1,1 2,
 insert into comment values(1,"明世隐","明世隐6666666");
 insert into comment values(1,"程咬金","程咬金6666666");
 
+create  table `user_order`(
+username varchar(100) not null,
+name varchar(1000) not null,
+date varchar(1000) not null
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+insert into user_order values("admin","扫黑行动","2022-11-22");

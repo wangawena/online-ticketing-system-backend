@@ -1,13 +1,15 @@
 package com.onlineTicketingSystem.filter;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
+//@WebFilter(filterName ="firstFilter")
 public class MyFilter implements Filter {
 
     //不需要过滤的路径
-    String[] filterURI={"/api/login"};
+    String[] filterURI={"/api/login","/api/register"};
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

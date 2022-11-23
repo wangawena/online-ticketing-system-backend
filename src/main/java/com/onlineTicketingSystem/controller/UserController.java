@@ -8,6 +8,7 @@ import com.onlineTicketingSystem.server.UserServer;
 import com.onlineTicketingSystem.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,12 +19,12 @@ public class UserController {
     @Autowired
     UserServer userServer;
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public Result login(User user)
     {
         Result result=new Result();
         result.setCode(400);
-        result.setMsg("false");
+        result.setMsg("登录失败");
 
         User u = userServer.selectuser(user);
         if(u==null)
@@ -31,7 +32,7 @@ public class UserController {
         else
         {
             result.setCode(200);
-            result.setMsg("success");
+            result.setMsg("登录成功");
             JWTUtil jwtUtil=new JWTUtil();
             Token token=new Token();
 
@@ -42,5 +43,16 @@ public class UserController {
             result.setData(token);
         }
         return result;
+    }
+
+    @PostMapping("/register")
+    public Result register(User user)
+    {
+        Result result=new Result();
+        result.setMsg("注册失败");
+        result.setCode(userServer.createUser(user));
+        if(result.getCode()==200)
+            result.setMsg("注册成功");
+        return  result;
     }
 }

@@ -17,10 +17,10 @@ public class ActosuriServerImpl implements ActosuriServer {
     ActosuriDao actosuriDao;
 
     @Override
-    public List<String> findAllActosuriByName(String name) {
+    public List<String> findAllActosuriByID(int id) {
 
         List<String> actorsURI=new ArrayList<>();
-        actorsURI=actosuriDao.findAllActosuriByName(name);
+        actorsURI=actosuriDao.findAllActosuriByID(id);
         return actorsURI;
     }
 }

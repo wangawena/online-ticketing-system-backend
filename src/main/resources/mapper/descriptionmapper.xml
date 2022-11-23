@@ -5,7 +5,7 @@
 <mapper namespace="com.onlineTicketingSystem.dao.DescriptionDao">
 
 
-    <select id="findAllDescByName" resultType="com.onlineTicketingSystem.pojo.Description">
-        select * from description where name=#{name};
+    <select id="findAllDescByID" resultType="com.onlineTicketingSystem.pojo.Description">
+        select * from description where id=#{id};
     </select>
 </mapper>

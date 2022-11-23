@@ -5,5 +5,5 @@ import java.util.List;
 public interface ActosuriServer {
 
 
-    public List<String> findAllActosuriByName(String name);
+    public List<String> findAllActosuriByID(int id);
 }

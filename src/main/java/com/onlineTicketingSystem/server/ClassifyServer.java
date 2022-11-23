@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface ClassifyServer {
 
-    public Classify findAllClassifyByName(String name);
+    public Classify findAllClassifyByID(int id);
 }

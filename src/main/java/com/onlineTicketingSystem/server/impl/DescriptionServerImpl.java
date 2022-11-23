@@ -14,9 +14,9 @@ public class DescriptionServerImpl implements DescriptionServer {
     DescriptionDao descriptionDao;
 
     @Override
-    public Description findAllDescByName(String name) {
+    public Description findAllDescByID(int id) {
         Description description=new Description();
-        description=descriptionDao.findAllDescByName(name);
+        description=descriptionDao.findAllDescByID(id);
         return description;
     }
 }

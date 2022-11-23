@@ -3,5 +3,5 @@ package com.onlineTicketingSystem.server;
 public interface SeatsServer {
 
 
-    public String[][] findSeatsByName(String name,String information);
+    public String[][] findSeatsByID(int id,String information);
 }

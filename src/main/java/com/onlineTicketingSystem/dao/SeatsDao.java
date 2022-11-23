@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SeatsDao {
 
-    public String findSeatsByName(String name,String information);
+    public String findSeatsID(int id,String information);
 
 }

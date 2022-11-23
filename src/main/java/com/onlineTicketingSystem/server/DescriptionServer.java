@@ -4,6 +4,6 @@ import com.onlineTicketingSystem.pojo.Description;
 
 public interface DescriptionServer {
 
-    public Description findAllDescByName(String name);
+    public Description findAllDescByID(int id);
 
 }

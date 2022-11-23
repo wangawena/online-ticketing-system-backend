@@ -13,42 +13,44 @@ primary key(id)
 insert into user(username,password) values("admin","admin");
 
 create table `movie`(
+id int not null AUTO_INCREMENT,
 name varchar(100) not null,
 duration varchar(100) not null,
 hot int not null,
 date varchar(100) not null,
-primary key(name )
+rating varchar(100) not null,
+primary key(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table `classify`(
-name varchar(100) not null,
+id int not null,
 type varchar(100) not null,
 region varchar(100) not null,
 period varchar(100) not null,
-primary key(name )
+primary key(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 create table `description`(
-name varchar(100) not null,
+id int not null,
 text varchar(1000) not null,
 comments varchar(100) not null,
 actors varchar(100) not null,
-primary key(name )
+primary key(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table `actosuri`(
-name varchar(100) not null,
+id int not null,
 actor varchar(100) not null
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table `galleryuri`(
-name varchar(100) not null,
+id int not null,
 gallery varchar(100) not null
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table `location`(
-name varchar(100) not null,
+id int not null,
 information varchar(100) not null,
 date varchar(100) not null,
 brand varchar(100) not null,
@@ -60,26 +62,35 @@ price varchar(100) not null,
 time varchar(100) not null,
 language varchar(100) not null,
 room varchar(100) not null,
-primary key(name )
+primary key(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 create table `seats`(
-name varchar(100) not null,
+id int not null,
 information varchar(100) not null,
 xy varchar(1000),
-primary key(name)
+primary key(id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+create table `comment`(
+id int not null,
+name varchar(100) not null,
+content varchar(1000) not null
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-insert into movie values("扫黑行动","99分钟",100,"2022-11-11");
-insert into classify values("扫黑行动","悬疑","全国","21世纪30年代");
-insert into description values("扫黑行动","改编自真实案件！周一围秦海璐张智霖联袂出演，扫黑除恶，重拳出击！女大学生离奇坠楼，刚调任到岗的刑侦支队副队长成锐（周一围 饰）被副局长杜于林（王劲松 饰）指派追查背后隐情，发现案件与套路贷、暴力催讨等黑势力犯罪有关，本市企业家安亦明（曾志伟 饰）被列为重点侦查对象，成锐想进一步调查却被要求尽快结案，究竟是谁在充当保护伞？城市危机四伏，安亦明之妻周彤（秦海璐 饰）、经济学教授赵羡鱼（张智霖 饰）纷纷身陷其中，为了还人民安宁，成锐和同事们突破难关追踪到底，却不想背后还有更大阴谋。真相究竟为何？他们能否将隐藏在黑暗中的罪恶一扫而尽？","好看","周一围,秦海璐,张智霖");
-insert into location values("扫黑行动","成华区建设路26号第五大道4栋4楼","11月22","万达","成华区","影厅类型","影厅服务","成华区建设路26号第五大道4栋4楼","23","99分钟","国语","4号厅");
-insert into galleryuri values("扫黑行动","https://p0.pipi.cn/mmdb/25bfd6922ffc7e50c8af3397dee2d43a3e265.jpg?imageView2/1/w/464/h/644");
-insert into actosuri values("扫黑行动","https://p0.pipi.cn/basicdata/25bfd69251b923c7ed5015671e7a3959dd1c3.jpg?imageView2/1/w/464/h/644");
-insert into actosuri values("扫黑行动","https://p0.pipi.cn/basicdata/25bfd6d753706dddd207ac3488c640d4734ac.jpg?imageView2/1/w/464/h/644");
-insert into actosuri values("扫黑行动","https://p0.pipi.cn/basicdata/25bfd6d753706d339e0e139cdc14e4ee93d89.jpg?imageView2/1/w/464/h/644'");
-insert into seats values("扫黑行动","成华区建设路26号第五大道4栋4楼","1,1 2,2 3,4");
+
+insert into movie(name,duration,hot,date,rating) values("扫黑行动","99分钟",100,"2022-11-11","1");
+insert into classify values(1,"悬疑","大陆","2022");
+insert into description values(1,"改编自真实案件！周一围秦海璐张智霖联袂出演，扫黑除恶，重拳出击！女大学生离奇坠楼，刚调任到岗的刑侦支队副队长成锐（周一围 饰）被副局长杜于林（王劲松 饰）指派追查背后隐情，发现案件与套路贷、暴力催讨等黑势力犯罪有关，本市企业家安亦明（曾志伟 饰）被列为重点侦查对象，成锐想进一步调查却被要求尽快结案，究竟是谁在充当保护伞？城市危机四伏，安亦明之妻周彤（秦海璐 饰）、经济学教授赵羡鱼（张智霖 饰）纷纷身陷其中，为了还人民安宁，成锐和同事们突破难关追踪到底，却不想背后还有更大阴谋。真相究竟为何？他们能否将隐藏在黑暗中的罪恶一扫而尽？","好看","周一围,秦海璐,张智霖");
+insert into location values(1,"成华区建设路26号第五大道4栋4楼","11月22","万达影城","成华区","4K厅","可改签","成华区建设路26号第五大道4栋4楼","23","99分钟","国语","4号厅");
+insert into galleryuri values(1,"https://p0.pipi.cn/mmdb/25bfd6922ffc7e50c8af3397dee2d43a3e265.jpg?imageView2/1/w/464/h/644");
+insert into actosuri values(1,"https://p0.pipi.cn/basicdata/25bfd69251b923c7ed5015671e7a3959dd1c3.jpg?imageView2/1/w/464/h/644");
+insert into actosuri values(1,"https://p0.pipi.cn/basicdata/25bfd6d753706dddd207ac3488c640d4734ac.jpg?imageView2/1/w/464/h/644");
+insert into actosuri values(1,"https://p0.pipi.cn/basicdata/25bfd6d753706d339e0e139cdc14e4ee93d89.jpg?imageView2/1/w/464/h/644'");
+insert into seats values(1,"成华区建设路26号第五大道4栋4楼","1,1 2,2 3,4");
+insert into comment values(1,"明世隐","明世隐6666666");
+insert into comment values(1,"程咬金","程咬金6666666");
 
 

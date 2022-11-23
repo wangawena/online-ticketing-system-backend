@@ -5,8 +5,8 @@
 
 <mapper namespace="com.onlineTicketingSystem.dao.ActosuriDao">
 
-    <select id="findAllActosuriByName" resultType="String">
-        select actor from actosuri where name=#{name};
+    <select id="findAllActosuriByID" resultType="String">
+        select actor from actosuri where id=#{id};
     </select>
 
 </mapper>

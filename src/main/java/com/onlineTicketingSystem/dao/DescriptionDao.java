@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
 public interface DescriptionDao {
 
 
-    public Description findAllDescByName(String name);
+    public Description findAllDescByID(int id);
 }

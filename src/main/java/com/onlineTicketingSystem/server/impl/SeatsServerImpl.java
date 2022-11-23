@@ -20,8 +20,8 @@ public class SeatsServerImpl implements SeatsServer {
     @Value("${seatsy}")
     int y=6;
     @Override
-    public String[][] findSeatsByName(String name,String information) {
-        String xy=seatsDao.findSeatsByName(name,information);
+    public String[][] findSeatsByID(int id,String information) {
+        String xy=seatsDao.findSeatsID(id,information);
         String[][] seats=stringToArray(xy);
         return seats;
     }

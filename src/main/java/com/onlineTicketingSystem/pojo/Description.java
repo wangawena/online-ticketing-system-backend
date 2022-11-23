@@ -6,7 +6,7 @@ public class Description {
     private List<String> actor;
     private List<String> gallery;
     private String text;
-    private String comments;
+    private List<Comment> comments;
 
     public List<String> getGallery() {
         return gallery;
@@ -36,13 +36,7 @@ public class Description {
         this.text = text;
     }
 
-    public String getComments() {
-        return comments;
-    }
 
-    public void setComments(String comments) {
-        this.comments = comments;
-    }
 
     public String getActors() {
         return actors;
@@ -50,5 +44,13 @@ public class Description {
 
     public void setActors(String actors) {
         this.actors = actors;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 }

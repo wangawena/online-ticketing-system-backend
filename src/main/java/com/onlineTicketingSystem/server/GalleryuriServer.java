@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface GalleryuriServer {
 
-    public List<String> findAllGalleryURIByName(String name);
+    public List<String> findAllGalleryURIByID(int id);
 }

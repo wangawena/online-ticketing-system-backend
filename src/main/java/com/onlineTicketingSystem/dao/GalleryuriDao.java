@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface GalleryuriDao {
 
-    public List<String> findAllGalleryURIByName(String name);
+    public List<String> findAllGalleryURIByID(int id);
 }

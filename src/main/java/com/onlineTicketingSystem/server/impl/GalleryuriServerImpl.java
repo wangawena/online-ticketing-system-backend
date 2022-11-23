@@ -17,9 +17,9 @@ public class GalleryuriServerImpl  implements GalleryuriServer {
     GalleryuriDao galleryuriDao;
 
     @Override
-    public List<String> findAllGalleryURIByName(String name) {
+    public List<String> findAllGalleryURIByID(int id) {
         List<String> galleryURI=new ArrayList<>();
-        galleryURI=galleryuriDao.findAllGalleryURIByName(name);
+        galleryURI=galleryuriDao.findAllGalleryURIByID(id);
         return galleryURI;
     }
 }

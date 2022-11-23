@@ -3,6 +3,8 @@ package com.onlineTicketingSystem.pojo;
 import java.util.List;
 
 public class Moive {
+    private int id;
+
     private String name;//电影名
     private Classify classify;
 
@@ -14,7 +16,7 @@ public class Moive {
 
     private List<Location> location;
 
-
+    private String rating;
     public String getName() {
         return name;
     }
@@ -70,6 +72,22 @@ public class Moive {
 
     public void setLocation(List<Location> location) {
         this.location = location;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
     }
 }
 

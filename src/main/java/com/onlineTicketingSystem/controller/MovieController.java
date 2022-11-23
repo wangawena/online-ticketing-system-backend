@@ -1,18 +1,10 @@
 package com.onlineTicketingSystem.controller;
 
 import com.onlineTicketingSystem.pojo.Classify;
-<<<<<<< HEAD
 import com.onlineTicketingSystem.pojo.Description;
 import com.onlineTicketingSystem.pojo.Location;
 import com.onlineTicketingSystem.pojo.Moive;
 import com.onlineTicketingSystem.server.*;
-=======
-import com.onlineTicketingSystem.pojo.Location;
-import com.onlineTicketingSystem.pojo.Moive;
-import com.onlineTicketingSystem.server.ClassifyServer;
-import com.onlineTicketingSystem.server.LocationServer;
-import com.onlineTicketingSystem.server.MovieServer;
->>>>>>> fb62187ea2a516bc84e041260b64858f1b6012ea
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,7 +26,6 @@ public class MovieController {
     @Autowired
     ClassifyServer classifyServer;
 
-<<<<<<< HEAD
     @Autowired
     DescriptionServer descriptionServer;
 
@@ -47,8 +38,6 @@ public class MovieController {
     @Autowired
     SeatsServer seatsServer;
 
-=======
->>>>>>> fb62187ea2a516bc84e041260b64858f1b6012ea
     @GetMapping("/findAll")
     public List<Moive> findAll()
     {
@@ -62,22 +51,18 @@ public class MovieController {
 
             List<Location> locationList=new ArrayList<>();
             locationList=locationServer.findAllLocationByName(name);
-<<<<<<< HEAD
             for(int j=0;j<locationList.size();j++)
             {
                 String information=locationList.get(i).getInformation();
                 locationList.get(i).setSeats(seatsServer.findSeatsByName(name,information));
             }
 
-=======
->>>>>>> fb62187ea2a516bc84e041260b64858f1b6012ea
             moiveList.get(i).setLocation(locationList);
 
             Classify classify=new Classify();
             classify=classifyServer.findAllClassifyByName(name);
             moiveList.get(i).setClassify(classify);
 
-<<<<<<< HEAD
             Description description=new Description();
             description=descriptionServer.findAllDescByName(name);
 
@@ -92,8 +77,6 @@ public class MovieController {
 
             moiveList.get(i).setDescription(description);
 
-=======
->>>>>>> fb62187ea2a516bc84e041260b64858f1b6012ea
         }
 
         return moiveList;

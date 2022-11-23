@@ -51,7 +51,6 @@ public class UserController {
     public Result register(User user)
     {
         Result result=new Result();
-<<<<<<< HEAD
         result.setMsg("注册失败");
         result.setCode(userServer.createUser(user));
         if(result.getCode()==200)
@@ -67,19 +66,9 @@ public class UserController {
         return userServer.findAllUSer();
     }
 
-
     @GetMapping("/user/findAllUserGet")
     public List<String> findAllUserGet()
     {
         return userServer.findAllUSer();
     }
-
-=======
-        result.setMsg("flase");
-        result.setCode(userServer.createUser(user));
-        if(result.getCode()==200)
-            result.setMsg("true");
-        return  result;
-    }
->>>>>>> fb62187ea2a516bc84e041260b64858f1b6012ea
 }

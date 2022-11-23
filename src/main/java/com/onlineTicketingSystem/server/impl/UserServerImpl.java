@@ -29,23 +29,17 @@ public class UserServerImpl implements UserServer {
         existUser= userDao.selectByUsername(user.getUsername());
         System.out.println("UserServerImpl exitUser:"+existUser);
         if(Integer.parseInt(existUser)!=0)
-<<<<<<< HEAD
             return 402;//用户名重复
-=======
-            return 202;//用户名重复
->>>>>>> fb62187ea2a516bc84e041260b64858f1b6012ea
         else
         {
             userDao.createUser(user);
             return 200;
         }
     }
-<<<<<<< HEAD
 
     @Override
     public List<String> findAllUSer() {
         return userDao.findAllUesr();
     }
-=======
->>>>>>> fb62187ea2a516bc84e041260b64858f1b6012ea
+
 }

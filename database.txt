@@ -62,7 +62,6 @@ price varchar(100) not null,
 time varchar(100) not null,
 language varchar(100) not null,
 room varchar(100) not null,
-primary key(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -70,7 +69,6 @@ create table `seats`(
 id int not null,
 information varchar(100) not null,
 xy varchar(1000),
-primary key(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table `comment`(
@@ -84,7 +82,7 @@ content varchar(1000) not null
 insert into movie(name,duration,hot,date,rating) values("扫黑行动","99分钟",100,"2022-11-11","1");
 insert into classify values(1,"悬疑","大陆","2022");
 insert into description values(1,"改编自真实案件！周一围秦海璐张智霖联袂出演，扫黑除恶，重拳出击！女大学生离奇坠楼，刚调任到岗的刑侦支队副队长成锐（周一围 饰）被副局长杜于林（王劲松 饰）指派追查背后隐情，发现案件与套路贷、暴力催讨等黑势力犯罪有关，本市企业家安亦明（曾志伟 饰）被列为重点侦查对象，成锐想进一步调查却被要求尽快结案，究竟是谁在充当保护伞？城市危机四伏，安亦明之妻周彤（秦海璐 饰）、经济学教授赵羡鱼（张智霖 饰）纷纷身陷其中，为了还人民安宁，成锐和同事们突破难关追踪到底，却不想背后还有更大阴谋。真相究竟为何？他们能否将隐藏在黑暗中的罪恶一扫而尽？","好看","周一围,秦海璐,张智霖");
-insert into location values(1,"成华区建设路26号第五大道4栋4楼","11月22","万达影城","成华区","4K厅","可改签","成华区建设路26号第五大道4栋4楼","23","99分钟","国语","4号厅");
+insert into location values(1,"成华区建设路26号第五大道4栋4楼","11月22","万达影城","成华区","4K厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","23","99分钟","国语","4号厅");
 insert into galleryuri values(1,"https://p0.pipi.cn/mmdb/25bfd6922ffc7e50c8af3397dee2d43a3e265.jpg?imageView2/1/w/464/h/644");
 insert into actosuri values(1,"https://p0.pipi.cn/basicdata/25bfd69251b923c7ed5015671e7a3959dd1c3.jpg?imageView2/1/w/464/h/644");
 insert into actosuri values(1,"https://p0.pipi.cn/basicdata/25bfd6d753706dddd207ac3488c640d4734ac.jpg?imageView2/1/w/464/h/644");
@@ -93,10 +91,39 @@ insert into seats values(1,"成华区建设路26号第五大道4栋4楼","1,1 2,
 insert into comment values(1,"明世隐","明世隐6666666");
 insert into comment values(1,"程咬金","程咬金6666666");
 
-create  table `user_order`(
-username varchar(100) not null,
-name varchar(1000) not null,
-date varchar(1000) not null
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 insert into user_order values("admin","扫黑行动","2022-11-22");
+
+
+insert into movie values(4,"还是觉得你最好","116分钟",87,"2022-09-09","13");
+insert into classify values(4,"喜剧","中国香港","2022");
+insert into description values(4,"大哥的前女友竟成为二哥现女友。自尊心驱使下，大哥答应了新结识的喵喵的追求。三弟和女友的姐弟恋同样面临危机。同一屋檐，3对情侣，4段恋情，每晚的聚餐渐渐演变成饭桌修罗场。面对爱情与亲情，他们将做何选择？9月9日中秋上映。","好看","黄子华,邓丽欣,张继聪");
+insert into location values(4,"都江堰市都江堰大道211号百伦广场7楼","11月24","横店影视","都江堰市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","42","116分钟","国语","8号厅");
+insert into galleryuri values(4,"https://p0.pipi.cn/mmdb/25bfd6512ffdddbe12f0ee77e460504b2653b.jpg?imageView2/1/w/464/h/644");
+insert into actosuri values(4,"https://p0.pipi.cn/basicdata/25bfd6d7537c6907acbe2a317e476a5d84132.jpg?imageView2/1/w/128/h/170");
+insert into actosuri values(4,"https://p0.pipi.cn/basicdata/25bfd6d753706d339e11e5d561adec22a8565.jpg?imageView2/1/w/128/h/170");
+insert into actosuri values(4,"https://p0.pipi.cn/basicdata/25bfd6d7537c6906d6281e98cb0449ad37c89.jpg?imageView2/1/w/128/h/170");
+insert into seats values(4,"都江堰市都江堰大道211号百伦广场7楼","");
+insert into comment values(4,"黄子华","黄子华8888888");
+insert into comment values(4,"邓丽欣","邓丽欣8888888");
+
+create  table `user_order`(
+username varchar(100) not null,
+brand varchar(100) not null,
+name varchar(1000) not null,
+date varchar(1000) not null,
+seatNumber varchar(100) not null,
+image varchar(200) not null,
+price varchar(100) not null
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into user_order values("admin","万达影城","扫黑行动","11月22","4号厅 1排1座","https://p0.pipi.cn/mmdb/25bfd6922ffc7e50c8af3397dee2d43a3e265.jpg?imageView2/1/w/464/h/644","23");
+
+
+
+
+
+
+
+

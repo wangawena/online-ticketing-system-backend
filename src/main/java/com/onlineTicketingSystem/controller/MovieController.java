@@ -52,10 +52,12 @@ public class MovieController {
 
             List<Location> locationList=new ArrayList<>();
             locationList=locationServer.findAllLocationByID(id);
+
+
             for(int j=0;j<locationList.size();j++)
             {
-                String information=locationList.get(i).getInformation();
-                locationList.get(i).setSeats(seatsServer.findSeatsByID(id,information));
+                String information=locationList.get(j).getInformation();
+                locationList.get(j).setSeats(seatsServer.findSeatsByID(id,information));
             }
 
             moiveList.get(i).setLocation(locationList);

@@ -2,16 +2,16 @@ package com.onlineTicketingSystem.controller;
 
 
 import com.onlineTicketingSystem.pojo.*;
+import com.onlineTicketingSystem.pojo.son.TickInformation;
 import com.onlineTicketingSystem.server.InformationServer;
+import com.onlineTicketingSystem.server.TickInformationServer;
 import com.onlineTicketingSystem.server.UserServer;
 import com.onlineTicketingSystem.util.JWTUtil;
 import com.sun.org.apache.xpath.internal.operations.Or;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -24,6 +24,8 @@ public class UserController {
     @Autowired
     InformationServer informationServer;
 
+    @Autowired
+    TickInformationServer tickInformationServer;
 
     @PostMapping("/login")
     public Result login(User user)
@@ -77,5 +79,30 @@ public class UserController {
         order.setUsername(username);
         order.setInformation(informationServer.findInformationByName(username));
         return order;
+    }
+
+
+    @GetMapping("/user/findAllTickByName")
+    public UserTickInformation findAllTickByName(String username)
+    {
+        UserTickInformation userTickInformation=new UserTickInformation();
+        userTickInformation.setUsername(username);
+        List<TickInformation> tickInformations=new ArrayList<>();
+        tickInformations=tickInformationServer.findAllTickByName(username);
+        userTickInformation.setTickInformation(tickInformations);
+        return userTickInformation;
+    }
+
+
+    @PostMapping("/user/ByTick")
+    public Result ByTick(@RequestBody  UserTickInformation userTickInformation)
+    {
+        Result result=new Result();
+        System.out.println("userTickInformation:"+userTickInformation.getUsername()
+        +"\n"+userTickInformation.getTickInformation().toString());
+        tickInformationServer.ByTick(userTickInformation);
+        result.setCode(200);
+        result.setMsg("购票成功");
+        return  result;
     }
 }

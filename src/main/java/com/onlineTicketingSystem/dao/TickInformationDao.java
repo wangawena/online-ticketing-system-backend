@@ -15,4 +15,5 @@ public interface TickInformationDao {
     public List<TickInformation> findAllTickByName(String username);
 
     public void ByTick(@Param("username") String username, @Param("tickInformation") TickInformation tickInformation);
+
 }

@@ -10,5 +10,7 @@ public interface TickInformationServer {
 
     public List<TickInformation> findAllTickByName(String username);
 
+
     public void ByTick(String username, TickInformation tickInformation);
+
 }

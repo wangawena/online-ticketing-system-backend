@@ -1,27 +1,32 @@
 package com.onlineTicketingSystem.pojo;
 
+import java.util.List;
+
 public class Description {
-    private String[] actor;
-    private String[] gallery;
+    private List<String> actor;
+    private List<String> gallery;
     private String text;
-    private String comments;
-    private String actors;
+    private List<Comment> comments;
 
-    public String[] getActor() {
-        return actor;
-    }
-
-    public void setActor(String[] actor) {
-        this.actor = actor;
-    }
-
-    public String[] getGallery() {
+    public List<String> getGallery() {
         return gallery;
     }
 
-    public void setGallery(String[] gallery) {
+    public void setGallery(List<String> gallery) {
         this.gallery = gallery;
     }
+
+    public List<String> getActor() {
+        return actor;
+    }
+
+    public void setActor(List<String> actor) {
+        this.actor = actor;
+    }
+
+    private String actors;
+
+
 
     public String getText() {
         return text;
@@ -31,13 +36,7 @@ public class Description {
         this.text = text;
     }
 
-    public String getComments() {
-        return comments;
-    }
 
-    public void setComments(String comments) {
-        this.comments = comments;
-    }
 
     public String getActors() {
         return actors;
@@ -45,5 +44,13 @@ public class Description {
 
     public void setActors(String actors) {
         this.actors = actors;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 }

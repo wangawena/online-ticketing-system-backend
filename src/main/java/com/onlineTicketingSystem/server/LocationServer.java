@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface LocationServer {
 
-    public List<Location> findAllLocationByName(String name);
+    public List<Location> findAllLocationByID(int id);
 }

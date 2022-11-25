@@ -4,8 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.onlineTicketingSystem.dao.ClassifyDao">
-    <select id="findAllClassifyByName" resultType="com.onlineTicketingSystem.pojo.Classify">
-        select * from classify where name=#{name};
+    <select id="findAllClassifyByID" resultType="com.onlineTicketingSystem.pojo.Classify">
+        select * from classify where id=#{id};
     </select>
 
 </mapper>

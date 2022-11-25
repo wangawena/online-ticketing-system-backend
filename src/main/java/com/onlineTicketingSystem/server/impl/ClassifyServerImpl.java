@@ -17,9 +17,9 @@ public class ClassifyServerImpl  implements ClassifyServer {
     ClassifyDao classifyDao;
 
     @Override
-    public Classify findAllClassifyByName(String name) {
+    public Classify findAllClassifyByID(int id) {
         Classify classifyList=new Classify();
-        classifyList=classifyDao.findAllClassifyByName(name);
+        classifyList=classifyDao.findAllClassifyByID(id);
         return classifyList;
     }
 }

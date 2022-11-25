@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.onlineTicketingSystem.dao.TickInformationDao">
+
+    <select id="findAllTickByName" resultType="com.onlineTicketingSystem.pojo.son.TickInformation">
+        select * from user_order where username=#{username};
+    </select>
+
+
+    <insert id="ByTick">
+        insert into user_order(username,brand,name,date,seatNumber,image,price) values(#{username},#{tickInformation.brand},#{tickInformation.name},
+        #{tickInformation.date},#{tickInformation.seatNumber},#{tickInformation.image},
+        #{tickInformation.price});
+    </insert>
+</mapper>

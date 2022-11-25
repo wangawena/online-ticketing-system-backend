@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface LocationDao {
 
-    public List<Location> selectAllLocationByName(String name);
+    public List<Location> selectAllLocationByID(int id);
 }

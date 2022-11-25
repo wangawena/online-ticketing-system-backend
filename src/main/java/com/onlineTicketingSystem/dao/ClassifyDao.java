@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface ClassifyDao {
 
-    public Classify findAllClassifyByName(String name);
+    public Classify findAllClassifyByID(int id);
 }

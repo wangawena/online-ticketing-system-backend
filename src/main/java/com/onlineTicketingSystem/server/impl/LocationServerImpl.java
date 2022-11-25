@@ -16,9 +16,9 @@ public class LocationServerImpl implements LocationServer {
     LocationDao locationDao;
 
     @Override
-    public List<Location> findAllLocationByName(String name) {
+    public List<Location> findAllLocationByID(int id) {
         List<Location> locationList=new ArrayList<>();
-        locationList=locationDao.selectAllLocationByName(name);
+        locationList=locationDao.selectAllLocationByID(id);
         return locationList;
     }
 }

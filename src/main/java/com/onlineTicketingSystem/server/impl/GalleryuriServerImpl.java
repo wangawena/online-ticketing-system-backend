@@ -22,4 +22,9 @@ public class GalleryuriServerImpl  implements GalleryuriServer {
         galleryURI=galleryuriDao.findAllGalleryURIByID(id);
         return galleryURI;
     }
+
+    @Override
+    public void deleteById(int id) {
+        galleryuriDao.deleteById(id);
+    }
 }

@@ -1,5 +1,8 @@
 package com.onlineTicketingSystem.pojo;
 
+
+
+//弃用  用tickinformation代替
 public class Information {
 
     private String name;

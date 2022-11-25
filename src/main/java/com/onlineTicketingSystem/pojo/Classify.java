@@ -1,5 +1,7 @@
 package com.onlineTicketingSystem.pojo;
 
+
+//电影类型
 public class Classify {
 
     private String type;//类型

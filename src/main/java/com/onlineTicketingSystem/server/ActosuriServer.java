@@ -6,4 +6,6 @@ public interface ActosuriServer {
 
 
     public List<String> findAllActosuriByID(int id);
+
+    public void deleteById(int id);
 }

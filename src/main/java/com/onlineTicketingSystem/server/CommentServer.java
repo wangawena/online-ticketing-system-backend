@@ -7,4 +7,7 @@ import java.util.List;
 public interface CommentServer {
 
     public List<Comment> findAllCommentByID(int id);
+
+
+    public void deleteById(int id);
 }

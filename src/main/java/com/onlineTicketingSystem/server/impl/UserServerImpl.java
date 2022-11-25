@@ -42,4 +42,9 @@ public class UserServerImpl implements UserServer {
         return userDao.findAllUesr();
     }
 
+    @Override
+    public int selectIdByName(String username) {
+        return userDao.selectIdByName(username);
+    }
+
 }

@@ -7,4 +7,8 @@
     <select id="findAllCommentByID" resultType="com.onlineTicketingSystem.pojo.Comment">
         select name,content from comment where id=#{id};
     </select>
+
+    <delete id="deleteById">
+        delete from comment where id=#{id};
+    </delete>
 </mapper>

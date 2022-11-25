@@ -7,4 +7,12 @@
     <select id="findSeatsID" resultType="String">
         select xy from seats where id=#{id} and information=#{information};
     </select>
+
+    <update id="updateById">
+        update seats set xy=#{seat} where id=#{id} and information=#{information} ;
+    </update>
+
+    <delete id="deleteById">
+        delete from seats where id=#{id};
+    </delete>
 </mapper>

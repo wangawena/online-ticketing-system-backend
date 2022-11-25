@@ -22,4 +22,9 @@ public class CommentServerImpl  implements CommentServer {
 
         return commentList;
     }
+
+    @Override
+    public void deleteById(int id) {
+        commentDao.deleteById(id);
+    }
 }

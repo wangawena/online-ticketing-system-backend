@@ -1,5 +1,7 @@
 package com.onlineTicketingSystem.pojo;
 
+
+//返回
 public class Result<T>{
 
     int code;

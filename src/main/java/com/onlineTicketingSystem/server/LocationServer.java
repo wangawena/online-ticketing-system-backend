@@ -7,4 +7,6 @@ import java.util.List;
 public interface LocationServer {
 
     public List<Location> findAllLocationByID(int id);
+
+    public void deleteById(int id);
 }

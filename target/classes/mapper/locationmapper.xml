@@ -7,4 +7,8 @@
     <select id="selectAllLocationByID" resultType="com.onlineTicketingSystem.pojo.Location">
         select * from location where id=#{id};
     </select>
+
+    <delete id="deleteById">
+        delete from location where id=#{id};
+    </delete>
 </mapper>

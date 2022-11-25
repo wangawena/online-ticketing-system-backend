@@ -4,6 +4,7 @@ import com.onlineTicketingSystem.pojo.son.TickInformation;
 
 import java.util.List;
 
+//用户购票信息
 public class UserTickInformation {
 
     private String username;

@@ -23,4 +23,10 @@ public class ActosuriServerImpl implements ActosuriServer {
         actorsURI=actosuriDao.findAllActosuriByID(id);
         return actorsURI;
     }
+
+
+    public void deleteById(int id)
+    {
+        actosuriDao.deleteById(id);
+    }
 }

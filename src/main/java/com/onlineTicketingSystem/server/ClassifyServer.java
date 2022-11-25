@@ -7,4 +7,7 @@ import java.util.List;
 public interface ClassifyServer {
 
     public Classify findAllClassifyByID(int id);
+
+
+    public void deleteById(int id);
 }

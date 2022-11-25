@@ -1,5 +1,7 @@
 package com.onlineTicketingSystem.pojo;
 
+
+//电影地址 信息
 public class Location {
     private String information;
     private String[][] seats;

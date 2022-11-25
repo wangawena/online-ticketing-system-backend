@@ -1,5 +1,7 @@
 package com.onlineTicketingSystem.pojo;
 
+
+//用户
 public class User {
 
     int id;

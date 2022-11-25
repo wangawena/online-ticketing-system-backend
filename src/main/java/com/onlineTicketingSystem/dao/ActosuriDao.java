@@ -12,4 +12,7 @@ public interface ActosuriDao {
 
 
     public List<String> findAllActosuriByID(int id);
+
+
+    public void deleteById(int id);
 }

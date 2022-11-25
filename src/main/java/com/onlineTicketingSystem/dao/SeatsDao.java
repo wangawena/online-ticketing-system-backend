@@ -10,4 +10,8 @@ public interface SeatsDao {
 
     public String findSeatsID(int id,String information);
 
+
+    public void updateById(int id, String information,String seat);
+
+    public void deleteById(int id);
 }

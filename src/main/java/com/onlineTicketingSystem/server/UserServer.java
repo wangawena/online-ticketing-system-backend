@@ -13,4 +13,6 @@ public interface UserServer {
 
     public List<String > findAllUSer();
 
+    public int selectIdByName(String username);
+
 }

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 create database ots;
 
 create table `user`(
@@ -7,10 +6,6 @@ username varchar(100) not null,
 password varchar(100) not null,
 primary key(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-insert into user(username,password) values("admin","admin");
 
 create table `movie`(
 id int not null AUTO_INCREMENT,
@@ -30,7 +25,6 @@ period varchar(100) not null,
 primary key(id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
 create table `description`(
 id int not null,
 text varchar(1000) not null,
@@ -41,12 +35,12 @@ primary key(id)
 
 create table `actosuri`(
 id int not null,
-actor varchar(100) not null
+actor varchar(1000) not null
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table `galleryuri`(
 id int not null,
-gallery varchar(100) not null
+gallery varchar(1000) not null
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table `location`(
@@ -61,14 +55,13 @@ address varchar(100) not null,
 price varchar(100) not null,
 time varchar(100) not null,
 language varchar(100) not null,
-room varchar(100) not null,
+room varchar(100) not null
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 
 create table `seats`(
 id int not null,
 information varchar(100) not null,
-xy varchar(1000),
+xy varchar(1000)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 create table `comment`(
@@ -77,9 +70,20 @@ name varchar(100) not null,
 content varchar(1000) not null
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+create  table `user_order`(
+username varchar(100) not null,
+brand varchar(100) not null,
+name varchar(1000) not null,
+date varchar(1000) not null,
+seatNumber varchar(100) not null,
+image varchar(200) not null,
+price varchar(100) not null,
+information varchar(1000) not null
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+insert into user(username,password) values("admin","admin");
 
-insert into movie(name,duration,hot,date,rating) values("扫黑行动","99分钟",100,"2022-11-11","1");
+insert into movie(name,duration,hot,date,rating) values(1,"扫黑行动","99分钟",100,"2022-11-11","1");
 insert into classify values(1,"悬疑","大陆","2022");
 insert into description values(1,"改编自真实案件！周一围秦海璐张智霖联袂出演，扫黑除恶，重拳出击！女大学生离奇坠楼，刚调任到岗的刑侦支队副队长成锐（周一围 饰）被副局长杜于林（王劲松 饰）指派追查背后隐情，发现案件与套路贷、暴力催讨等黑势力犯罪有关，本市企业家安亦明（曾志伟 饰）被列为重点侦查对象，成锐想进一步调查却被要求尽快结案，究竟是谁在充当保护伞？城市危机四伏，安亦明之妻周彤（秦海璐 饰）、经济学教授赵羡鱼（张智霖 饰）纷纷身陷其中，为了还人民安宁，成锐和同事们突破难关追踪到底，却不想背后还有更大阴谋。真相究竟为何？他们能否将隐藏在黑暗中的罪恶一扫而尽？","好看","周一围,秦海璐,张智霖");
 insert into location values(1,"成华区建设路26号第五大道4栋4楼","11月22","万达影城","成华区","4K厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","23","99分钟","国语","4号厅");
@@ -90,10 +94,6 @@ insert into actosuri values(1,"https://p0.pipi.cn/basicdata/25bfd6d753706d339e0e
 insert into seats values(1,"成华区建设路26号第五大道4栋4楼","1,1 2,2 3,4");
 insert into comment values(1,"明世隐","明世隐6666666");
 insert into comment values(1,"程咬金","程咬金6666666");
-
-
-
-insert into user_order values("admin","扫黑行动","2022-11-22");
 
 
 insert into movie values(4,"还是觉得你最好","116分钟",87,"2022-09-09","13");
@@ -108,18 +108,255 @@ insert into seats values(4,"都江堰市都江堰大道211号百伦广场7楼","
 insert into comment values(4,"黄子华","黄子华8888888");
 insert into comment values(4,"邓丽欣","邓丽欣8888888");
 
-create  table `user_order`(
-username varchar(100) not null,
-brand varchar(100) not null,
-name varchar(1000) not null,
-date varchar(1000) not null,
-seatNumber varchar(100) not null,
-image varchar(200) not null,
-price varchar(100) not null
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+insert into movie values(5,"名侦探柯南","130分钟",4,"2022-11-18","15");
+insert into classify values(5,"冒险","日本","2022");
+insert into description values(5,"高中生侦探工藤新一和青梅竹马的同学毛利兰一同去游乐园玩的时候，目击了黑衣男子的可疑交易现场。只顾偷看交易的工藤新一，却忽略了从背后接近的另一名同伙。他被那名男子灌下了毒药","好看","高山南,小山力,高木");
+insert into location values(5,"都江堰市都江堰大道 211 号百伦广场 7 楼","11 月 24","横店影视","都江堰市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","42","116分钟","国语","8 号厅");
+insert into galleryuri values(5,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.nga.178.com%2Fattachments%2Fmon_202202%2F14%2F-9lddQ17k-3qh6ZsT3cSzk-k0.jpg&refer=http%3A%2F%2Fimg.nga.178.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671864663&t=5143eb5725693b193bd89f0f25040157");
+insert into actosuri values(5,"https://gss0.baidu.com/70cFfyinKgQFm2e88IuM_a/baike/pic/item/cdbf6c81800a19d8ec1aedba33fa828ba61e4677.jpg");
+insert into actosuri values(5,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.bnacg.com%2Fuploads%2F2008%2F1-200Q3150232943.jpg&refer=http%3A%2F%2Fwww.bnacg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671864992&t=411a7b97033a1880fd5853f0f554ee0a");
+insert into actosuri values(5,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fstatic.missevan.com%2Fseiys%2F202001%2F20%2Ff2e9688e82053ed043a620dcd96e29ca204033.jpg&refer=http%3A%2F%2Fstatic.missevan.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671865173&t=be65cc496b71efb24467f789585d84d2");
+insert into seats values(5,"都江堰市都江堰大道 211 号百伦广场 7 楼","");
+insert into comment values(5,"黄子华","黄子华 8888888");
+insert into comment values(5,"邓丽欣","邓丽欣 8888888");
 
-insert into user_order values("admin","万达影城","扫黑行动","11月22","4号厅 1排1座","https://p0.pipi.cn/mmdb/25bfd6922ffc7e50c8af3397dee2d43a3e265.jpg?imageView2/1/w/464/h/644","23");
+insert into movie values(6,"万里归途","101分钟",8,"2022-11-19","12");
+insert into classify values(6,"冒险","大陆","2022");
+insert into description values(6,"该片根据真实事件改编，讲述了前驻地外交官宗大伟与外交部新人成朗受命前往协助撤侨，任务顺利结束，却得知还有一批被困同胞，正在白婳的带领下，前往边境撤离点的故事","好看","张译，王俊凯，成龙");
+insert into location values(6,"成都新都百货101 号百伦广场 4楼","11 月 20","横店影视","成都市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","50","101分钟","国语","10 号厅");
+insert into galleryuri values(6,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fres0.dyhjw.com%2Fupload%2Fdefault%2F20220909%2Fccc36d61ac5d041c561f125f035d8e1c.jpg&refer=http%3A%2F%2Fres0.dyhjw.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870104&t=14204b1dacbf3a97e0cdfcff5759baac");
+insert into actosuri values(6,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp1.itc.cn%2Fq_70%2Fimages03%2F20221122%2F1ef7288d1ffc45e082831194938041a2.jpeg&refer=http%3A%2F%2Fp1.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671866634&t=7dff27bbae6c1f13a4423e31c8bf0178");
+insert into actosuri values(6,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fww1.sinaimg.cn%2Fmw690%2F003mGMa6gy1h8dn5tci0cj61jk2bc7ug02.jpg&refer=http%3A%2F%2Fwww.sina.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870054&t=747dafb427de6f839e7052a35cbb1db3");
+insert into actosuri values(6,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp4.itc.cn%2Fq_70%2Fimages03%2F20221124%2Fece863f800174451ab98a7ba6ede54b4.jpeg&refer=http%3A%2F%2Fp4.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671869765&t=e74e595172ddbb422e3636fd770d38de");
+insert into seats values(6,"成都新都百货101 号百伦广场 4楼","");
+insert into comment values(6,"黄子华","黄子华 8888888");
+insert into comment values(6,"邓丽欣","邓丽欣 8888888");
 
+insert into movie values(7,"青春正好","101分钟",8,"2022-11-10","20");
+insert into classify values(7,"喜剧","大陆","2022");
+insert into description values(7,"本片展现四个主人公怀抱一致的青春梦想，历经磨难最终成功。青春正好，不留遗憾。","好看","苏有朋，关晓彤，毛晓彤");
+insert into location values(7,"成都新都广场101号华谊4楼","11 月 20","横店影视","成都市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","50","101分钟","国语","10 号厅");
+insert into galleryuri values(7,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fres0.dyhjw.com%2Fupload%2Fdefault%2F20220909%2Fccc36d61ac5d041c561f125f035d8e1c.jpg&refer=http%3A%2F%2Fres0.dyhjw.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870104&t=14204b1dacbf3a97e0cdfcff5759baac");
+insert into actosuri values(7,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.n63.com%2Fphotodir%2Fn63img%2F%3FN%3DX2hiJTI2ZGRXJTVEV2ElNUVXJTVEV3JXa1clNUVXciU1QldlZyU1QiUyNiUyQi5mJTI2b29vJTI3aHFrJTI3ZVlmYSU2MCU1QiUyNw%253D%253D%26v%3D.jpg&refer=http%3A%2F%2Fwww.n63.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870222&t=78604cbbda0872cb20c53fbf6cd16e31");
+insert into actosuri values(7,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp4.itc.cn%2Fq_70%2Fimages03%2F20221124%2F21802433dba4418d8a2e2b54186da80a.jpeg&refer=http%3A%2F%2Fp4.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870256&t=0b38a558c421fb25433ba164c80d5841");
+insert into actosuri values(7,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fnimg.ws.126.net%2F%3Furl%3Dhttp%253A%252F%252Fdingyue.ws.126.net%252F2022%252F1124%252F0848aeb8j00rlu03p001tc000hs00vmg.jpg%26thumbnail%3D660x2147483647%26quality%3D80%26type%3Djpg&refer=http%3A%2F%2Fnimg.ws.126.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870296&t=45da1bed53f1176cdc16764b34663bcf");
+insert into seats values(7,"成都新都广场101号华谊4楼","");
+insert into comment values(7,"黄子华","黄子华 8888888");
+insert into comment values(7,"邓丽欣","邓丽欣 8888888");
+
+insert into movie values(8,"绑架游戏","101分钟",7,"2022-11-10","26");
+insert into classify values(8,"动作","大陆","2022");
+insert into description values(8,"该片根据东野圭吾的同名小说改编，讲述陆飞在赌场欠下秦海沛巨额赌金后，遇上其正准备离家出走的女儿秦晓垚，一场绑架游戏就此开局的故事。","好看","彭昱畅，张婧仪，梁小龙");
+insert into location values(8,"成都新都广场101号华谊4楼","11 月 20","横店影视","成都市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","50","101 分钟","国语","10 号厅");
+insert into galleryuri values(8,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp4.itc.cn%2Fimages01%2F20220326%2F2597998ea08a4ce9bd46d22ec6dac4ef.jpeg&refer=http%3A%2F%2Fp4.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870400&t=8b79d3acfd6f82fa6f3bbad94dfc6a4e");
+insert into actosuri values(8,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.baikequanshuo123.com%2Fuploads%2F2022%2F10%2F3c5dobhye3y.jpg&refer=http%3A%2F%2Fwww.baikequanshuo123.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870357&t=5f0d41e708abcdb02f2215ebb11d9416");
+insert into actosuri values(8,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fnimg.ws.126.net%2F%3Furl%3Dhttp%253A%252F%252Fdingyue.ws.126.net%252F2022%252F1124%252F2f2e9355j00rlu00h001bc000hs00vig.jpg%26thumbnail%3D660x2147483647%26quality%3D80%26type%3Djpg&refer=http%3A%2F%2Fnimg.ws.126.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870447&t=13b986ffe6007e193da8179dad2ed600");
+insert into actosuri values(8,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fphotocdn.sohu.com%2F20130314%2FImg368826886.jpg&refer=http%3A%2F%2Fphotocdn.sohu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870488&t=97f691c58f623d2b625b7790c4e42294");
+insert into seats values(8,"成都新都广场101号华谊4楼","");
+insert into comment values(8,"黄子华","黄子华 8888888");
+insert into comment values(8,"邓丽欣","邓丽欣 8888888");
+
+insert into movie values(8,"功夫精灵","功夫精灵",8,"2022-11-10","28");
+insert into classify values(8,"剧情","大陆","2022");
+insert into description values(8,"讲述了在一群生活在武术精灵村孩子们，以及他们在生活中的各种故事，主人公是顽皮的麻小凡，在他某天偷偷溜出精灵村之后，而引发的一系列事件","好看","梁小龙，张智霖，成龙");
+insert into location values(8,"成都新都广场101号新都影院4楼","11 月 20","横店影视","成都市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c,"50","101 分钟","国语","10 号厅");
+insert into galleryuri values(8,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2F03087bf40ad162d955cc2fb017dfa9ec8a13cd78&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870564&t=9bfffad5f94be741c30598cc96e02c9d");
+insert into actosuri values(8,"https://t11.baidu.com/it/u=1405908883,177816701&fm=30&app=106&f=JPEG?w=640&h=960&s=D4E29B565A1A4BD8063FFEAD0300E00D");
+insert into actosuri values(8,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp1.itc.cn%2Fq_70%2Fimages03%2F20221124%2Fec850ef911904073a2ce8f238cf9a922.jpeg&refer=http%3A%2F%2Fp1.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870634&t=3063bae91ae48671772488b1016a7441");
+insert into actosuri values(8,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp4.itc.cn%2Fq_70%2Fimages03%2F20221124%2Fece863f800174451ab98a7ba6ede54b4.jpeg&refer=http%3A%2F%2Fp4.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870680&t=26a690a1e687c2ca23da636477db5baf");
+insert into seats values(8,"成都新都广场101号新都影院4楼","");
+insert into comment values(8,"黄子华","黄子华 8888888");
+insert into comment values(8,"邓丽欣","邓丽欣 8888888");
+
+insert into movie values(9,"无名","101分钟",10,"2022-11-10","44");
+insert into classify values(9,"剧情","大陆","2022");
+insert into description values(9,"该片聚焦了波谲云诡的隐蔽战线，讲述了地下工作者们冒着生命危险送出情报，用生命与热血保卫祖国的故事","好看","梁朝伟，梁小龙，成龙");
+insert into location values(9,"成都新都广场101号新都影院4楼","11 月 20","横店影视","成都市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","50","101 分钟","国语","10 号厅");
+insert into galleryuri values(9,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fci.xiaohongshu.com%2F42d28b02-a475-2fb1-1413-7316bb3ef673%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fci.xiaohongshu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870758&t=77a87cb9c8c03a29d845c2a91adb79c5");
+insert into actosuri values(9,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fww2.sinaimg.cn%2Fmw690%2F7cebaed8ly1h8e9ihqkuwj20sg0l0gnz.jpg&refer=http%3A%2F%2Fwww.sina.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870804&t=ec6ab2862e27826b393887f475f4625f");
+insert into actosuri values(9,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp4.itc.cn%2Fq_70%2Fimages03%2F20221124%2Fece863f800174451ab98a7ba6ede54b4.jpeg&refer=http%3A%2F%2Fp4.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870853&t=3dd5667dba17dacc84c93c610a70507b");
+insert into actosuri values(9,"https://t11.baidu.com/it/u=1405908883,177816701&fm=30&app=106&f=JPEG?w=640&h=960&s=D4E29B565A1A4BD8063FFEAD0300E00D");
+insert into seats values(9,"成都新都广场101号新都影院4楼","");
+insert into comment values(9,"黄子华","黄子华 9999999");
+insert into comment values(9,"邓丽欣","邓丽欣 9999999");
+
+
+insert into movie values(10,"维和防爆队","101分钟",10,"2022-11-10","48");
+insert into classify values(10,"剧情","大陆","2022");
+insert into description values(10,"该片讲述了中国维和警察防暴队在海外执行任务的故事","好看","黄景瑜，钟楚曦，吴斌");
+insert into location values(10,"成都新都广场101号新都影院4楼","11 月 20","横店影视","成都市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","50","101 分钟","国语","10 号厅");
+insert into galleryuri values(10,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fcos3.solepic.com%2F20211222%2Fb_639774202112221608264610.jpg&refer=http%3A%2F%2Fcos3.solepic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671871049&t=8417add3c92a422c55f782f5a6255005");
+insert into actosuri values(10,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201803%2F17%2F20180317195737_ZBLim.thumb.700_0.jpeg&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671871230&t=9e55d195417c1f1130ec8116621ef2dd");
+insert into actosuri values(10,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fnimg.ws.126.net%2F%3Furl%3Dhttp%253A%252F%252Fdingyue.ws.126.net%252F2022%252F1123%252F12b350d7j00rlsjh6001pc000hs00qoc.jpg%26thumbnail%3D660x2147483647%26quality%3D80%26type%3Djpg&refer=http%3A%2F%2Fnimg.ws.126.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671871289&t=d125ad26207f75a253fd5923c971dd89");
+insert into actosuri values(10,"https://pic.rmb.bdstatic.com/4cef55b6ace7bbe1c5b84ee0e7a4e2b0.jpeg");
+insert into seats values(10,"成都新都广场101号新都影院4楼","");
+insert into comment values(10,"黄子华","黄子华 9999999");
+insert into comment values(10,"邓丽欣","邓丽欣 9999999");
+
+
+insert into movie values(11,"暗杀风暴","101分钟",10,"2022-11-10","40");
+insert into classify values(11,"剧情","大陆","2022");
+insert into description values(11,"该片改编自周浩晖原著小说死亡通知单：暗黑者，讲述了在扑朔迷离的连环杀人案件中，每一位收到死亡通知单的人，都被自称Darker的神秘人残忍杀害，而专案小组在调查过程中，发现了隐藏在背后的巨大阴谋的故事","好看","古天乐，张智霖，成龙");
+insert into location values(11,"成都新都广场101号新都影院4楼","11 月 20","横店影视","成都市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","50","101 分钟","国语","10 号厅");
+insert into galleryuri values(11,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Ffun.youth.cn%2Fgnzx%2F202111%2FW020211119396286195348.jpg&refer=http%3A%2F%2Ffun.youth.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671871651&t=21fc05431fee39eaf3e2bc75be2069cd");
+insert into actosuri values(11,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp9.itc.cn%2Fq_70%2Fimages03%2F20221123%2Fab880630657348c3a3b586b62853eb16.jpeg&refer=http%3A%2F%2Fp9.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671871687&t=b576055699b6e43dff32f38fa517c8c8");
+insert into actosuri values(11,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2Ff636afc379310a55e8557a01b94543a9832610d5&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671866047&t=bf49b38a987d1263e8cc1f67e9fe29fe");
+insert into actosuri values(11,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp4.itc.cn%2Fq_70%2Fimages03%2F20221124%2Fece863f800174451ab98a7ba6ede54b4.jpeg&refer=http%3A%2F%2Fp4.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671871751&t=5a9e7e6fa5c5576b64ac8ec790c5cc74");
+insert into seats values(11,"成都新都广场101号新都影院4楼","");
+insert into comment values(11,"黄子华","黄子华 9999999");
+insert into comment values(11,"邓丽欣","邓丽欣 9999999");
+
+
+insert into movie values(12,"断网","105分钟",10,"2022-11-10","41");
+insert into classify values(12,"剧情","大陆","2022");
+insert into description values(12,"该片讲述了一个网络世界的故事：高级程序员卓家俊在网络安保公司工作多年表现超卓，一次针对头部银行的数据攻击令他无意中被卷入一场极端贪婪凶恶的网络金融犯罪活动。面对黑白两道通缉，为保护家人并证明自己的清白，他利用自己的计算机天赋与犯罪分子进行了一场惊心动魄的较量","好看","任达华，张智霖，成龙");
+insert into location values(12,"成都新都广场101号新都影院4楼","11 月 20","横店影视","成都市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","50","101 分钟","国语","10 号厅");
+insert into galleryuri values(12,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp6.itc.cn%2Fimages01%2F20220509%2Fc42414ab4ebe47b0b48698ebc50f78cf.jpeg&refer=http%3A%2F%2Fp6.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671872191&t=7bde192b137c6e68ab3c0fd049014d7c");
+insert into actosuri values(12,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fnimg.ws.126.net%2F%3Furl%3Dhttp%253A%252F%252Fdingyue.ws.126.net%252F2020%252F0625%252F35f50b30j00qchd5k000ec0008g00awg.jpg%26thumbnail%3D660x2147483647%26quality%3D80%26type%3Djpg&refer=http%3A%2F%2Fnimg.ws.126.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671872236&t=698bf357c9d5d2e1be46451c5491b440");
+insert into actosuri values(12,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2Ff636afc379310a55e8557a01b94543a9832610d5&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671866047&t=bf49b38a987d1263e8cc1f67e9fe29fe");
+insert into actosuri values(12,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp4.itc.cn%2Fq_70%2Fimages03%2F20221124%2Fece863f800174451ab98a7ba6ede54b4.jpeg&refer=http%3A%2F%2Fp4.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671871751&t=5a9e7e6fa5c5576b64ac8ec790c5cc74");
+insert into seats values(12,"成都新都广场101号新都影院4楼","");
+insert into comment values(12,"黄子华","黄子华 9999999");
+insert into comment values(12,"邓丽欣","邓丽欣 9999999");
+
+
+insert into movie values(13,"猎毒","150分钟",10,"2022-11-10","47");
+insert into classify values(13,"剧情","大陆","2022");
+insert into description values(13,"该片讲述了缉毒女警察伪装身份，卧底贩毒集团的故事","好看","杨紫，张智霖，成龙");
+insert into location values(13,"成都新都广场101号新都影院4楼","11 月 20","横店影视","成都市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","50","101 分钟","国语","10 号厅");
+insert into galleryuri values(13,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_bt%2F0%2F14190058388%2F641&refer=http%3A%2F%2Finews.gtimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671872654&t=f3eb0ed7298cf0ddfe38d9eb84b6aeda");
+insert into actosuri values(13,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp4.itc.cn%2Fq_70%2Fimages03%2F20221124%2F6924598f217d4620939a2f3501653dc2.jpeg&refer=http%3A%2F%2Fp4.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671872620&t=972350a802150297839b5147407d3e58");
+insert into actosuri values(13,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2Ff636afc379310a55e8557a01b94543a9832610d5&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671866047&t=bf49b38a987d1263e8cc1f67e9fe29fe");
+insert into actosuri values(13,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp4.itc.cn%2Fq_70%2Fimages03%2F20221124%2Fece863f800174451ab98a7ba6ede54b4.jpeg&refer=http%3A%2F%2Fp4.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671871751&t=5a9e7e6fa5c5576b64ac8ec790c5cc74");
+insert into seats values(13,"成都新都广场101号新都影院4楼","");
+insert into comment values(13,"黄子华","黄子华 9999999");
+insert into comment values(13,"邓丽欣","邓丽欣 9999999");
+
+
+insert into movie values(14,"检查风云","123分钟",10,"2022-11-10","80");
+insert into classify values(14,"剧情","大陆","2022");
+insert into description values(14,"该片根据真实案例改编，主要讲述在开展扫黑除恶的斗争中，检察官如何担当如何作为的故事","好看","黄景瑜，张智霖，成龙");
+insert into location values(14,"成都新都广场101号新都影院4楼","11 月 20","横店影视","成都市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","50","101 分钟","国语","10 号厅");
+insert into galleryuri values(14,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.touzitop.com%2Farticle%2Fdetails%2F22%2F68ade29dfab3728fa21e71e879326996.jpg&refer=http%3A%2F%2Fimg.touzitop.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671873032&t=9ab6d6c986e8f035f82b8ab79fbc8948");
+insert into actosuri values(14,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201803%2F17%2F20180317195737_ZBLim.thumb.700_0.jpeg&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671872904&t=a336d037880747822b451b2b79176d37");
+insert into actosuri values(14,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2Ff636afc379310a55e8557a01b94543a9832610d5&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671866047&t=bf49b38a987d1263e8cc1f67e9fe29fe");
+insert into actosuri values(14,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp4.itc.cn%2Fq_70%2Fimages03%2F20221124%2Fece863f800174451ab98a7ba6ede54b4.jpeg&refer=http%3A%2F%2Fp4.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671871751&t=5a9e7e6fa5c5576b64ac8ec790c5cc74");
+insert into seats values(14,"成都新都广场101号新都影院4楼","");
+insert into comment values(14,"黄子华","黄子华 9999999");
+insert into comment values(14,"邓丽欣","邓丽欣 9999999");
+
+
+insert into movie values(15,"战疫英雄","10分钟",10,"2022-11-10","84");
+insert into classify values(15,"剧情","大陆","2022");
+insert into description values(15,"该片以一个城市一个医院的医护人员作为故事主线，主要讲述了人民医院的主任医生赵安娜和护士长杨柳在面对无情的肺炎，带领整个医院的医护人员，所展现的英雄精神，正是这种精神战胜了可怕的肺炎病毒","好看","任重，张智霖，成龙");
+insert into location values(15,"成都新都广场101号新都影院4楼","11 月 20","横店影视","成都市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","50","101 分钟","国语","10 号厅");
+insert into galleryuri values(15,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimage11.m1905.cn%2Fuploadfile%2F2021%2F0614%2Fthumb_0_1920_1080_3_1_10_20210614045823761583.jpg&refer=http%3A%2F%2Fimage11.m1905.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671873299&t=82afe95efef87466401d767dd8f45710");
+insert into actosuri values(15,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fnimg.ws.126.net%2F%3Furl%3Dhttp%253A%252F%252Fdingyue.ws.126.net%252F2020%252F0903%252Fbba668daj00qg36tj001mc000m800b4g.jpg%26thumbnail%3D660x2147483647%26quality%3D80%26type%3Djpg&refer=http%3A%2F%2Fnimg.ws.126.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671873333&t=a6e34156f0fac3d3a5a40105c57c9e6d");
+insert into actosuri values(15,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2Ff636afc379310a55e8557a01b94543a9832610d5&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671866047&t=bf49b38a987d1263e8cc1f67e9fe29fe");
+insert into actosuri values(15,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp4.itc.cn%2Fq_70%2Fimages03%2F20221124%2Fece863f800174451ab98a7ba6ede54b4.jpeg&refer=http%3A%2F%2Fp4.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671871751&t=5a9e7e6fa5c5576b64ac8ec790c5cc74");
+insert into seats values(15,"成都新都广场101号新都影院4楼","");
+insert into comment values(15,"黄子华","黄子华 9999999");
+insert into comment values(15,"邓丽欣","邓丽欣 9999999");
+
+
+insert into movie values(16,"长津湖","150分钟",10,"2022-11-10","82");
+insert into classify values(16,"剧情","大陆","2022");
+insert into description values(16,"该片以抗美援朝战争第二次战役中的长津湖战役为背景，讲述了一段波澜壮阔的历史，在极寒严酷环境下，中国人民志愿军东线作战部队凭着钢铁意志和英勇无畏的战斗精神，扭转战场态势，为长津湖战役胜利做出重要贡献的故事","好看","吴京，张智霖，成龙");
+insert into location values(16,"成都新都广场101号新都影院4楼","11 月 20","横店影视","成都市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","50","101 分钟","国语","10 号厅");
+insert into galleryuri values(16,"https://pics6.baidu.com/feed/d439b6003af33a87dc1689c6d88a5e335143b5d0.png@f_auto?token=3effd1d6013fb613752ad7513e4a7b3a");
+insert into actosuri values(16,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fnimg.ws.126.net%2F%3Furl%3Dhttp%253A%252F%252Fdingyue.ws.126.net%252F2022%252F0802%252F6dfd498ej00rfzkkf0019c000k000l0m.jpg%26thumbnail%3D660x2147483647%26quality%3D80%26type%3Djpg&refer=http%3A%2F%2Fnimg.ws.126.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671873662&t=d70813cce53f61c18eb4e6ad73805db8");
+insert into actosuri values(16,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2Ff636afc379310a55e8557a01b94543a9832610d5&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671866047&t=bf49b38a987d1263e8cc1f67e9fe29fe");
+insert into actosuri values(16,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp4.itc.cn%2Fq_70%2Fimages03%2F20221124%2Fece863f800174451ab98a7ba6ede54b4.jpeg&refer=http%3A%2F%2Fp4.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671871751&t=5a9e7e6fa5c5576b64ac8ec790c5cc74");
+insert into seats values(16,"成都新都广场101号新都影院4楼","");
+insert into comment values(16,"黄子华","黄子华 9999999");
+insert into comment values(16,"邓丽欣","邓丽欣 9999999");
+
+
+insert into movie values(17,"隐入尘烟","130分钟",10,"2022-11-10","12");
+insert into classify values(17,"剧情","大陆","2022");
+insert into description values(17,"该片故事背景设定在2011年的甘肃农村，讲述了一对农村夫妇艰辛而温馨的一段生命旅程的故事","好看","吴京，张智霖，成龙");
+insert into location values(17,"成都新都广场101号新都影院4楼","11 月 20","横店影视","成都市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","50","101 分钟","国语","10 号厅");
+insert into galleryuri values(17,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic3.zhimg.com%2Fv2-3965e13d5ae19770b442e0e783ac4407_r.jpg%3Fsource%3D1940ef5c&refer=http%3A%2F%2Fpic3.zhimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671873999&t=6a1448b80d11e4780a387c5f596c7449");
+insert into actosuri values(17,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20180131%2Fbd9251c55ceb40648663e7758485f8fb.jpeg&refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671874047&t=a83a64361dae96c3a670332349c6467f");
+insert into actosuri values(17,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2Ff636afc379310a55e8557a01b94543a9832610d5&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671866047&t=bf49b38a987d1263e8cc1f67e9fe29fe");
+insert into actosuri values(17,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp4.itc.cn%2Fq_70%2Fimages03%2F20221124%2Fece863f800174451ab98a7ba6ede54b4.jpeg&refer=http%3A%2F%2Fp4.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671871751&t=5a9e7e6fa5c5576b64ac8ec790c5cc74");
+insert into seats values(17,"成都新都广场101号新都影院4楼","");
+insert into comment values(17,"黄子华","黄子华 9999999");
+insert into comment values(17,"邓丽欣","邓丽欣 9999999");
+
+
+insert into movie values(18,"边缘行者","120分钟",10,"2022-11-10","17");
+insert into classify values(18,"剧情","大陆","2022");
+insert into description values(18,"该片讲述了拥有双重身份的阿骆，游走在黑白两道之间，为了收集取证，与黑警合作，最终将警察内部的黑警绳之以法的故事","好看","任贤齐，张智霖，成龙");
+insert into location values(18,"成都新都广场101号新都影院4楼","11 月 20","横店影视","成都市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","50","101 分钟","国语","10 号厅");
+insert into galleryuri values(18,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_bt%2F0%2F14710406682%2F641&refer=http%3A%2F%2Finews.gtimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671874290&t=a5c06995b8510bcc1dcac7f00983644e");
+insert into actosuri values(18,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.southyule.com%2Fd%2Ffile%2Fmusic%2F2%2F2021-06-07%2F56937779af1b883facd3b33d7cf5b6dc.jpg&refer=http%3A%2F%2Fimg.southyule.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671874326&t=1fec94b06191ce46f5e2347516511d62");
+insert into actosuri values(18,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2Ff636afc379310a55e8557a01b94543a9832610d5&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671866047&t=bf49b38a987d1263e8cc1f67e9fe29fe");
+insert into actosuri values(18,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp4.itc.cn%2Fq_70%2Fimages03%2F20221124%2Fece863f800174451ab98a7ba6ede54b4.jpeg&refer=http%3A%2F%2Fp4.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671871751&t=5a9e7e6fa5c5576b64ac8ec790c5cc74");
+insert into seats values(18,"成都新都广场101号新都影院4楼","");
+insert into comment values(18,"黄子华","黄子华 9999999");
+insert into comment values(18,"邓丽欣","邓丽欣 9999999");
+
+
+insert into movie values(19,"小龙女","132分钟",10,"2022-11-10","19");
+insert into classify values(19,"剧情","大陆","2022");
+insert into description values(19,"影片主要讲述了初访人间的小龙女白溪（张楚寒饰）与守寺小杂役弘济（孔舒航饰）相识后，两人一同去都府寻找因爱迷失的黑龙女如墨（张荻饰），相伴过程中情愫渐起，一段禁忌之恋悄然而至的凄美爱情故事","好看","马雪阳，张智霖，成龙");
+insert into location values(19,"成都新都广场101号新都影院4楼","11 月 20","横店影视","成都市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","50","101 分钟","国语","10 号厅");
+insert into galleryuri values(19,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg2.utuku.imgcdc.com%2F650x0%2Fent%2F20220920%2F3978f58e-1f12-471e-a0f3-2135953bbef4.jpg&refer=http%3A%2F%2Fimg2.utuku.imgcdc.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671874562&t=0c25c556005c4edd866d93cae9af8231");
+insert into actosuri values(19,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimage.yjcf360.com%2F20180521%2F31765af3efcc4e949c363ed378fe4a3c.png&refer=http%3A%2F%2Fimage.yjcf360.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671874591&t=f00a1642bcf2d102a97982c8bd1f111b");
+insert into actosuri values(19,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2Ff636afc379310a55e8557a01b94543a9832610d5&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671866047&t=bf49b38a987d1263e8cc1f67e9fe29fe");
+insert into actosuri values(19,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp4.itc.cn%2Fq_70%2Fimages03%2F20221124%2Fece863f800174451ab98a7ba6ede54b4.jpeg&refer=http%3A%2F%2Fp4.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671871751&t=5a9e7e6fa5c5576b64ac8ec790c5cc74");
+insert into seats values(19,"成都新都广场101号新都影院4楼","");
+insert into comment values(19,"黄子华","黄子华 9999999");
+insert into comment values(19,"邓丽欣","邓丽欣 9999999");
+
+
+
+insert into movie values(21,"隐形侠","111分钟",10,"2022-11-10","71");
+insert into classify values(21,"剧情","大陆","2022");
+insert into description values(21,"一天，一帮无家可归的外星人将迁徙地锁定于地球上一座原本宁静的小镇。镇上拥有隐形超能力的青年王二狗（李晨浩饰），凭一己之力担负起了驱赶外星人、保护小镇、守护地球的任务","好看","巩汉林，张智霖，成龙");
+insert into location values(21,"成都新都广场101号新都影院4楼","11 月 20","横店影视","成都市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","50","101 分钟","国语","10 号厅");
+insert into galleryuri values(21,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2Fc9bdddce48d1d71092457ee4&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671875172&t=5635feb2e8dbe8433655e9a941231051");
+insert into actosuri values(21,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.show160.com%2FUpload%2Fimages%2F20193%2F636871459476195494.jpg&refer=http%3A%2F%2Fimg.show160.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671875244&t=1f03dc1494def3be310b1d626f9702c4");
+insert into actosuri values(21,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2Ff636afc379310a55e8557a01b94543a9832610d5&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671866047&t=bf49b38a987d1263e8cc1f67e9fe29fe");
+insert into actosuri values(21,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp4.itc.cn%2Fq_70%2Fimages03%2F20221124%2Fece863f800174451ab98a7ba6ede54b4.jpeg&refer=http%3A%2F%2Fp4.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671871751&t=5a9e7e6fa5c5576b64ac8ec790c5cc74");
+insert into seats values(21,"成都新都广场101号新都影院4楼","");
+insert into comment values(21,"黄子华","黄子华 9999999");
+insert into comment values(21,"邓丽欣","邓丽欣 9999999");
+
+
+insert into movie values(20,"护卫者","140分钟",10,"2022-11-10","78");
+insert into classify values(20,"剧情","大陆","2022");
+insert into description values(20,"护卫者讲述的故事发生在虚拟的特丹尔国，国际保镖高天保护雇主薛烽前往特丹尔国进行商务洽谈，在路途上遭到恐怖分子的袭击，最后在中国女孩沈月以及导游费尔南德和特种兵阿尼尔的帮助下解救人质","好看","聂荣鑫，张智霖，成龙");
+insert into location values(20,"成都新都广场101号新都影院4楼","11 月 20","横店影视","成都市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","50","101 分钟","国语","10 号厅");
+insert into galleryuri values(20,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2F2cf5e0fe9925bc315c608a1c9d949ab1cb134854daa9&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671874875&t=726c0923e4c7148ddde042e8195b3028");
+insert into actosuri values(20,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.baizhan.net%2Fd%2Ffile%2F20210223%2F48f73ee1042aaeba6f2a381e2944c180.jpg&refer=http%3A%2F%2Fimg.baizhan.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671874963&t=902bb43e5a7f420e5212fec88ba538ed");
+insert into actosuri values(20,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2Ff636afc379310a55e8557a01b94543a9832610d5&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671866047&t=bf49b38a987d1263e8cc1f67e9fe29fe");
+insert into actosuri values(20,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp4.itc.cn%2Fq_70%2Fimages03%2F20221124%2Fece863f800174451ab98a7ba6ede54b4.jpeg&refer=http%3A%2F%2Fp4.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671871751&t=5a9e7e6fa5c5576b64ac8ec790c5cc74");
+insert into seats values(20,"成都新都广场101号新都影院4楼","");
+insert into comment values(20,"黄子华","黄子华 9999999");
+insert into comment values(20,"邓丽欣","邓丽欣 9999999");
+
+
+
+insert into movie values(22,"猎影追凶","133分钟",10,"2022-11-10","170");
+insert into classify values(22,"剧情","大陆","2022");
+insert into description values(22,"偏僻的乡村发生惨案，刑侦队长王大中等人深入调查，案件陷入迷局，错误引导的线索、屡次逃脱的影子使案件更加错综复杂。犯罪依然在升级，刑警队员们没有畏惧，从咫尺中发现玄机，终于将藏在人间的魔影绳之以法","好看","刘畅，张智霖，成龙");
+insert into location values(22,"成都新都广场101号新都影院4楼","11 月 20","横店影视","成都市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","50","101 分钟","国语","10 号厅");
+insert into galleryuri values(22,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimage11.m1905.cn%2Fmdb%2Fuploadfile%2F2021%2F0204%2Fthumb_1_283_390_20210204050243468490.jpg&refer=http%3A%2F%2Fimage11.m1905.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671875449&t=c430de7eff3dc493caa63ca613a80aeb");
+insert into actosuri values(22,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg2.utuku.imgcdc.com%2F650x0%2Fent%2F20210607%2F9b201a25-f7b8-49ed-9f2d-d22968e627fb.jpg&refer=http%3A%2F%2Fimg2.utuku.imgcdc.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671875482&t=6bd68c8bce6833552ef22b48cb5bc128");
+insert into actosuri values(22,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2Ff636afc379310a55e8557a01b94543a9832610d5&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671866047&t=bf49b38a987d1263e8cc1f67e9fe29fe");
+insert into actosuri values(22,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp4.itc.cn%2Fq_70%2Fimages03%2F20221124%2Fece863f800174451ab98a7ba6ede54b4.jpeg&refer=http%3A%2F%2Fp4.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671871751&t=5a9e7e6fa5c5576b64ac8ec790c5cc74");
+insert into seats values(22,"成都新都广场101号新都影院4楼","");
+insert into comment values(22,"黄子华","黄子华 9999999");
+insert into comment values(22,"邓丽欣","邓丽欣 9999999");
+
+
+
+
+
+insert into user_order values("admin","万达影城","扫黑行动","11月22","4号厅 1排1座","https://p0.pipi.cn/mmdb/25bfd6922ffc7e50c8af3397dee2d43a3e265.jpg?imageView2/1/w/464/h/644","23","成华区建设路26号第五大道4栋4楼");
+insert into user_order values("admin1","万达影城","扫黑行动","11月22","4号厅 3排4座","https://p0.pipi.cn/mmdb/25bfd6922ffc7e50c8af3397dee2d43a3e265.jpg?imageView2/1/w/464/h/644","23","成华区建设路26号第五大道4栋4楼");
 
 
 

@@ -9,4 +9,9 @@
         select actor from actosuri where id=#{id};
     </select>
 
+
+    <delete id="deleteById">
+        delete from actosuri where id=#{id};
+    </delete>
+
 </mapper>

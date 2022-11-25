@@ -1,5 +1,7 @@
 package com.onlineTicketingSystem.pojo;
 
+
+//电影评论
 public class Comment {
 
     private String name;

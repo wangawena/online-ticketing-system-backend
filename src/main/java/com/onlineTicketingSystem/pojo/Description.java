@@ -2,11 +2,13 @@ package com.onlineTicketingSystem.pojo;
 
 import java.util.List;
 
+//电影评论，演员图片，电影海报
 public class Description {
-    private List<String> actor;
-    private List<String> gallery;
-    private String text;
-    private List<Comment> comments;
+    private List<String> actor;//演员图片
+    private List<String> gallery;//电影海报
+    private String text;//电影简介
+    private List<Comment> comments;//电影评论
+    private String actors;//演员列表
 
     public List<String> getGallery() {
         return gallery;
@@ -24,8 +26,6 @@ public class Description {
         this.actor = actor;
     }
 
-    private String actors;
-
 
 
     public String getText() {
@@ -35,8 +35,6 @@ public class Description {
     public void setText(String text) {
         this.text = text;
     }
-
-
 
     public String getActors() {
         return actors;

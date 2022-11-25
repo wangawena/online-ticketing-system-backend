@@ -12,4 +12,6 @@ import java.util.List;
 public interface CommentDao {
 
     public List<Comment> findAllCommentByID(int id);
+
+    public void deleteById(int id);
 }

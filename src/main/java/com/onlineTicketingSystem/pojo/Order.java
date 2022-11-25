@@ -4,6 +4,8 @@ import com.onlineTicketingSystem.dao.InformationDao;
 
 import java.util.List;
 
+
+//订单  弃用
 public class Order {
     private  String username;
     private List<Information> information;

@@ -7,4 +7,8 @@
     <select id="selectAllInformation" resultType="com.onlineTicketingSystem.pojo.Moive">
         select * from movie;
     </select>
+
+    <delete id="deleteById">
+        delete from movie where id=#{id};
+    </delete>
 </mapper>

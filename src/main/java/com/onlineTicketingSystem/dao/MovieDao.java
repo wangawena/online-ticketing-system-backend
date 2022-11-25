@@ -11,4 +11,7 @@ import java.util.List;
 public interface MovieDao {
 
     public List<Moive> selectAllInformation();
+
+
+    public void deleteById(int id);
 }

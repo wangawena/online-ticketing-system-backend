@@ -11,9 +11,14 @@
 
 
     <insert id="ByTick">
-        insert into user_order(username,brand,name,date,seatNumber,image,price) values(#{username},#{tickInformation.brand},#{tickInformation.name},
+        insert into user_order(username,brand,name,date,seatNumber,image,price,information) values(#{username},#{tickInformation.brand},#{tickInformation.name},
         #{tickInformation.date},#{tickInformation.seatNumber},#{tickInformation.image},
-        #{tickInformation.price});
-
+        #{tickInformation.price},#{tickInformation.information});
     </insert>
+
+
+
+    <select id="findAllTickName" resultType="String">
+        select username from user_order;
+    </select>
 </mapper>

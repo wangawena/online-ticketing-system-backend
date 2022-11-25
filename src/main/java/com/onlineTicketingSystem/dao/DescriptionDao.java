@@ -11,4 +11,7 @@ public interface DescriptionDao {
 
 
     public Description findAllDescByID(int id);
+
+
+    public void deleteById(int id);
 }

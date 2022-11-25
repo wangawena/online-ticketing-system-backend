@@ -17,6 +17,8 @@ public class Moive {
     private List<Location> location;
 
     private String rating;
+
+
     public String getName() {
         return name;
     }

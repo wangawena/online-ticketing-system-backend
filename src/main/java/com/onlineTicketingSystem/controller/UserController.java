@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 @RestController
@@ -94,18 +96,50 @@ public class UserController {
     }
 
 
+
+    @GetMapping("/user/findAllTick")
+    public List<UserTickInformation> findAllTick()
+    {
+        List<UserTickInformation> userTickInformationList=new ArrayList<>();
+
+        //查找购片的用户
+        HashSet<String> nameSet=new HashSet<>();
+        nameSet=tickInformationServer.findAllTickName();
+        System.out.println("findAllTick:"+nameSet);
+
+        //转为list方便获取
+        List<String> nameList=new ArrayList<>(nameSet);
+        int nameSize=nameList.size();
+
+        for(int i=0;i<nameSize;i++)
+        {
+            UserTickInformation userTickInformation=new UserTickInformation();
+            String name=nameList.get(i);;
+            userTickInformation.setUsername(name);
+            userTickInformation.setTickInformation(tickInformationServer.findAllTickByName(name));
+
+            userTickInformationList.add(userTickInformation);
+        }
+
+        return userTickInformationList;
+    }
+
+
+
     @PostMapping("/user/ByTick")
     public Result ByTick(@RequestBody  UserTickInformation userTickInformation)
     {
         Result result=new Result();
-        System.out.println("userTickInformation:"+userTickInformation.getUsername()
-        +"\n"+userTickInformation.getTickInformation());
+        System.out.println("userTickInformation:"+userTickInformation.getUsername() +"\n"+userTickInformation.getTickInformation());
 
         TickInformation tickInformation=userTickInformation.getTickInformation().get(0);
-
         tickInformationServer.ByTick(userTickInformation.getUsername(),tickInformation);
+
         result.setCode(200);
         result.setMsg("购票成功");
         return  result;
     }
+
+
+
 }

@@ -8,4 +8,8 @@
     <select id="findAllDescByID" resultType="com.onlineTicketingSystem.pojo.Description">
         select * from description where id=#{id};
     </select>
+
+    <delete id="deleteById">
+        delete from description where id=#{id};
+    </delete>
 </mapper>

@@ -4,6 +4,7 @@ import com.onlineTicketingSystem.pojo.*;
 import com.onlineTicketingSystem.server.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -86,5 +87,16 @@ public class MovieController {
         }
 
         return moiveList;
+    }
+
+
+    @GetMapping("/deleteById")
+    public Result deleteById(int id)
+    {
+        Result result=new Result();
+        movieServer.deleteById(id);
+        result.setMsg("删除成功");
+        result.setCode(200);
+        return result;
     }
 }

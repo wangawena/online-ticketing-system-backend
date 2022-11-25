@@ -11,4 +11,7 @@ import java.util.List;
 public interface ClassifyDao {
 
     public Classify findAllClassifyByID(int id);
+
+
+    public void deleteById(int id);
 }

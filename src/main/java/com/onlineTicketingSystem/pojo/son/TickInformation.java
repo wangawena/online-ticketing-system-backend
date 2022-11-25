@@ -11,6 +11,16 @@ public class TickInformation {
     private String image;//电影图片
     private String price;//价格
 
+    private String information;//电影院地址
+
+    public String getInformation() {
+        return information;
+    }
+
+    public void setInformation(String information) {
+        this.information = information;
+    }
+
     public String getBrand() {
         return brand;
     }
@@ -68,6 +78,7 @@ public class TickInformation {
                 ", seatNumber='" + seatNumber + '\'' +
                 ", image='" + image + '\'' +
                 ", price='" + price + '\'' +
+                ", information='" + information + '\'' +
                 '}';
     }
 }

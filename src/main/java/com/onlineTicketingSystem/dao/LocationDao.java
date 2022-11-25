@@ -11,4 +11,6 @@ import java.util.List;
 public interface LocationDao {
 
     public List<Location> selectAllLocationByID(int id);
+
+    public void deleteById(int id);
 }

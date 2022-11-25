@@ -26,6 +26,17 @@ public class SeatsServerImpl implements SeatsServer {
         return seats;
     }
 
+    @Override
+    public void deleteById(int id) {
+        seatsDao.deleteById(id);
+    }
+
+    @Override
+    public void updateById(int id, String information, String seat) {
+        String seatPast=seatsDao.findSeatsID(id,information);
+        String seatNow=seatPast+getXY(seat);
+        seatsDao.updateById(id,information,seatNow);
+    }
 
 
     public String[][] stringToArray(String xy)
@@ -50,5 +61,23 @@ public class SeatsServerImpl implements SeatsServer {
 
         }
         return seats;
+    }
+
+
+    public String getXY(String seat)
+    {
+        String xy="";
+        int seatSize=seat.length();
+
+        for(int i=0;i<seatSize;i++)
+        {
+            if(seat.charAt(i)=='排')
+            {
+                char xx=seat.charAt(i-1);
+                char yy=seat.charAt(i+1);
+                xy=xy+" "+xx+","+yy;
+            }
+        }
+        return xy;
     }
 }

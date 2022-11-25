@@ -22,4 +22,9 @@ public class ClassifyServerImpl  implements ClassifyServer {
         classifyList=classifyDao.findAllClassifyByID(id);
         return classifyList;
     }
+
+    @Override
+    public void deleteById(int id) {
+        classifyDao.deleteById(id);
+    }
 }

@@ -23,4 +23,7 @@ public interface UserDao {
 
     public List<String> findAllUesr();
 
+
+    public int selectIdByName(String username);
+
 }

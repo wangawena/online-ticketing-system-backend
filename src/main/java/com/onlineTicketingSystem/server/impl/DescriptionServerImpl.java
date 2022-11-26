@@ -47,10 +47,19 @@ public class DescriptionServerImpl implements DescriptionServer {
 
     @Override
     public void insertById(int id, Description description) {
-        //插入演员图片
-        actosuriDao.insertById(id,description.getActor());
+
+        for(int i=0;i<description.getActor().size();i++)
+        {
+            //插入演员图片
+            actosuriDao.insertById(id, description.getActor().get(i));
+        }
+
+        for(int i=0;i<description.getGallery().size();i++)
+        {
         //插入电影海报
-        galleryuriDao.insertById(id,description.getGallery());
+        galleryuriDao.insertById(id,description.getGallery().get(i));
+        }
+
         //插入简介、演员列表
         descriptionDao.insertById(id,description);
     }

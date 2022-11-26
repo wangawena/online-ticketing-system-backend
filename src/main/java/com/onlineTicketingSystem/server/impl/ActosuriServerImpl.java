@@ -31,7 +31,7 @@ public class ActosuriServerImpl implements ActosuriServer {
     }
 
     @Override
-    public void insertById(int id, List<String> actor) {
+    public void insertById(int id, String actor) {
         actosuriDao.insertById(id,actor);
     }
 }

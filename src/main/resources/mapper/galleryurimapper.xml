@@ -13,9 +13,8 @@
     </delete>
 
     <select id="insertById">
-        insert into galleryuri values
-        <foreach collection="list" item="gallery">
-            (#{id},#{gallery})
-        </foreach>
+
+            insert into galleryuri values (#{id},#{gallery});
+
     </select>
 </mapper>

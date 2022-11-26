@@ -15,10 +15,7 @@
     </delete>
 
     <select id="insertById">
-        insert into actosuri values
-        <foreach collection="list" item="actor">
-            (#{id},#{actor})
-        </foreach>
+            insert into galleryuri values (#{id},#{actor});
     </select>
 
 </mapper>

@@ -9,5 +9,5 @@ public interface ActosuriServer {
 
     public void deleteById(int id);
 
-    public void insertById(int id, List<String> actor);
+    public void insertById(int id, String actor);
 }

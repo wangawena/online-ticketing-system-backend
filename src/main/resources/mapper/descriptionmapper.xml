@@ -14,6 +14,6 @@
     </delete>
 
     <insert id="insertById">
-        insert into description values(#{id},#{description.text},“好看”,#{description.actors});
+        insert into description values(#{id},#{description.text},#{description.actors},#{description.actors});
     </insert>
 </mapper>

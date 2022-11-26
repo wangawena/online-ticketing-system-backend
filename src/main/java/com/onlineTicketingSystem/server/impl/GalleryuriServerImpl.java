@@ -29,7 +29,7 @@ public class GalleryuriServerImpl  implements GalleryuriServer {
     }
 
     @Override
-    public void insertById(int id, List<String> gallery) {
+    public void insertById(int id, String gallery) {
         galleryuriDao.insertById(id,gallery);
     }
 }

@@ -8,6 +8,6 @@ public interface GalleryuriServer {
 
     public void deleteById(int id);
 
-    public void insertById(int id,List<String> gallery);
+    public void insertById(int id,String gallery);
 
 }

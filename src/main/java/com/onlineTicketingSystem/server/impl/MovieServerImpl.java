@@ -72,4 +72,9 @@ public class MovieServerImpl implements MovieServer {
         return movieDao.findIdByName(name);
     }
 
+    @Override
+    public int findExit(String name) {
+        return movieDao.findExit(name);
+    }
+
 }

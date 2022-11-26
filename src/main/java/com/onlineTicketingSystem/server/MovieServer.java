@@ -15,4 +15,7 @@ public interface MovieServer {
     public void addMovie(Moive moive);
 
     public int findIdByName(String name);
+
+
+    public int findExit(String name);
 }

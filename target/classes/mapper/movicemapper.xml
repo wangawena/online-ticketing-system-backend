@@ -17,6 +17,11 @@
     </insert>
 
     <select id="findIdByName" resultType="Integer">
+        select id from movie where name=#{name};
+    </select>
+
+
+    <select id="findExit" resultType="Integer">
         select count(id) from movie where name=#{name};
     </select>
 </mapper>

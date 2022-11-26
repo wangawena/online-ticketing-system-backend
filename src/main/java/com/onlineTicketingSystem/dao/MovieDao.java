@@ -18,4 +18,10 @@ public interface MovieDao {
     public void insertMovie(Moive moive);
 
     public int findIdByName(String name);
+
+
+    public int findExit(String name);
+
+
+
 }

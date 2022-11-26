@@ -103,7 +103,7 @@ public class MovieController {
     {
         Result result=new Result();
 
-        if(movieServer.findIdByName(moive.getName())==0)
+        if(movieServer.findExit(moive.getName())==0)
         {
             movieServer.addMovie(moive);
             result.setCode(200);

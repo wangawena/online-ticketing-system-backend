@@ -76,7 +76,7 @@ brand varchar(100) not null,
 name varchar(1000) not null,
 date varchar(1000) not null,
 seatNumber varchar(100) not null,
-image varchar(200) not null,
+image varchar(2000) not null,
 price varchar(100) not null,
 information varchar(1000) not null
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -15,4 +15,8 @@
     <delete id="deleteById">
         delete from seats where id=#{id};
     </delete>
+
+    <insert id="insertById">
+        insert into seats values(#{id},#{information},"");
+    </insert>
 </mapper>

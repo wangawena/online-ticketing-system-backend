@@ -1,5 +1,6 @@
 package com.onlineTicketingSystem.server.impl;
 
+import com.onlineTicketingSystem.dao.MovieDao;
 import com.onlineTicketingSystem.dao.TickInformationDao;
 import com.onlineTicketingSystem.dao.UserDao;
 import com.onlineTicketingSystem.pojo.UserTickInformation;
@@ -27,6 +28,10 @@ public class TickInformationServerImpl implements TickInformationServer {
     @Autowired
     UserDao userDao;
 
+
+    @Autowired
+    MovieDao movieDao;
+
     @Override
     public List<TickInformation> findAllTickByName(String username) {
 
@@ -39,7 +44,9 @@ public class TickInformationServerImpl implements TickInformationServer {
     public void ByTick(String username, TickInformation tickInformation) {
         tickInformationDao.ByTick(username,tickInformation);
         String seat=tickInformation.getSeatNumber();
-        int id=userDao.selectIdByName(username);
+        //int id=userDao.selectIdByName(username);
+        int id=movieDao.findIdByName(tickInformation.getName());
+        System.out.println("id"+id);
         String information=tickInformation.getInformation();
         seatsServer.updateById(id,information,seat);
     }

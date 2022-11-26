@@ -11,4 +11,11 @@
     <delete id="deleteById">
         delete from galleryuri where id=#{id};
     </delete>
+
+    <select id="insertById">
+        insert into galleryuri values
+        <foreach collection="list" item="gallery">
+            (#{id},#{gallery})
+        </foreach>
+    </select>
 </mapper>

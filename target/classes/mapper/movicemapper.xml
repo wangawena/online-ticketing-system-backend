@@ -11,4 +11,12 @@
     <delete id="deleteById">
         delete from movie where id=#{id};
     </delete>
+
+    <insert id="insertMovie">
+        insert into movie(name,duration,hot,date,rating) values(#{name},#{duration},#{hot},#{date},#{rating});
+    </insert>
+
+    <select id="findIdByName" resultType="Integer">
+        select id from movie where name=#{name};
+    </select>
 </mapper>

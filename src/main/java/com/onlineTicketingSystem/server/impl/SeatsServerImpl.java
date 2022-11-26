@@ -34,7 +34,13 @@ public class SeatsServerImpl implements SeatsServer {
     @Override
     public void updateById(int id, String information, String seat) {
         String seatPast=seatsDao.findSeatsID(id,information);
-        String seatNow=seatPast+getXY(seat);
+        String seatNow;
+        if("".equals(seatPast))
+            seatNow=getXY(seat);
+        else
+            seatNow=seatPast+" "+getXY(seat);
+
+        System.out.println(seatNow);
         seatsDao.updateById(id,information,seatNow);
     }
 
@@ -73,11 +79,14 @@ public class SeatsServerImpl implements SeatsServer {
         {
             if(seat.charAt(i)=='排')
             {
-                char xx=seat.charAt(i-1);
-                char yy=seat.charAt(i+1);
-                xy=xy+" "+xx+","+yy;
+                int xx=Integer.valueOf(seat.charAt(i-1))-48-1;
+                int yy=Integer.valueOf(seat.charAt(i+1))-48-1;
+                System.out.println("xx:"+xx+" yy:"+yy);
+                xy=xx+","+yy;
             }
         }
+
+        System.out.println("xy:" +xy);
         return xy;
     }
 }

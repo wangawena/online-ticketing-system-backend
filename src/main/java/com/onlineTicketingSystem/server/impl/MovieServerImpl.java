@@ -66,4 +66,10 @@ public class MovieServerImpl implements MovieServer {
     }
 
 
+    @Override
+    public int findIdByName(String name)
+    {
+        return movieDao.findIdByName(name);
+    }
+
 }

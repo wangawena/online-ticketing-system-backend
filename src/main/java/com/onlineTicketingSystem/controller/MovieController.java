@@ -102,9 +102,18 @@ public class MovieController {
     public Result addMovie(@RequestBody Moive moive)
     {
         Result result=new Result();
-        movieServer.addMovie(moive);
-        result.setCode(200);
-        result.setMsg("插入成功");
+
+        if(movieServer.findIdByName(moive.getName())==0)
+        {
+            movieServer.addMovie(moive);
+            result.setCode(200);
+            result.setMsg("插入成功");
+        }
+        else
+        {
+            result.setMsg("该电影已存在");
+            result.setCode(406);
+        }
         return result;
     }
 }

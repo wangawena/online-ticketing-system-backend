@@ -14,4 +14,6 @@ public interface ClassifyDao {
 
 
     public void deleteById(int id);
+
+    public void insertClassifyById(int id, Classify classify);
 }

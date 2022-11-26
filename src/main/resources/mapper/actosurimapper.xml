@@ -14,4 +14,11 @@
         delete from actosuri where id=#{id};
     </delete>
 
+    <select id="insertById">
+        insert into actosuri values
+        <foreach collection="list" item="actor">
+            (#{id},#{actor})
+        </foreach>
+    </select>
+
 </mapper>

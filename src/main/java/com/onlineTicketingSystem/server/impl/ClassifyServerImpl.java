@@ -27,4 +27,9 @@ public class ClassifyServerImpl  implements ClassifyServer {
     public void deleteById(int id) {
         classifyDao.deleteById(id);
     }
+
+    @Override
+    public void insertById(int id, Classify classify) {
+        classifyDao.insertClassifyById(id,classify);
+    }
 }

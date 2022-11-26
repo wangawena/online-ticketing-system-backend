@@ -13,4 +13,6 @@ public interface LocationDao {
     public List<Location> selectAllLocationByID(int id);
 
     public void deleteById(int id);
+
+    public void insertById(int id, Location location);
 }

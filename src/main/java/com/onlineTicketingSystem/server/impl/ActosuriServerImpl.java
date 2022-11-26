@@ -29,4 +29,9 @@ public class ActosuriServerImpl implements ActosuriServer {
     {
         actosuriDao.deleteById(id);
     }
+
+    @Override
+    public void insertById(int id, List<String> actor) {
+        actosuriDao.insertById(id,actor);
+    }
 }

@@ -11,4 +11,11 @@
     <delete id="deleteById">
         delete from location where id=#{id};
     </delete>
+
+    <insert id="insertById">
+        insert into location(id,information,date,brand,district,cinemaType,service,address,price,time,language,room)
+        values(#{id},#{location.information},#{location.date},#{location.brand},#{location.district},
+        #{location.cinemaType},#{location.service},#{location.address},#{location.price},#{location.time},#{location.language},
+        #{location.room});
+    </insert>
 </mapper>

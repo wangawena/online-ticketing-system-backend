@@ -32,4 +32,10 @@ public class LocationServerImpl implements LocationServer {
         locationDao.deleteById(id);
         seatsDao.deleteById(id);
     }
+
+    @Override
+    public void insertById(int id, Location location) {
+        locationDao.insertById(id,location);
+        seatsDao.insertById(id,location.getInformation());
+    }
 }

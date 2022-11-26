@@ -14,4 +14,6 @@ public interface SeatsDao {
     public void updateById(int id, String information,String seat);
 
     public void deleteById(int id);
+
+    public void insertById(int id,String information);
 }

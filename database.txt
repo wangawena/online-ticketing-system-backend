@@ -156,17 +156,17 @@ insert into seats values(8,"成都新都广场101号华谊4楼","");
 insert into comment values(8,"黄子华","黄子华 8888888");
 insert into comment values(8,"邓丽欣","邓丽欣 8888888");
 
-insert into movie values(8,"功夫精灵","功夫精灵",8,"2022-11-10","28");
-insert into classify values(8,"剧情","大陆","2022");
-insert into description values(8,"讲述了在一群生活在武术精灵村孩子们，以及他们在生活中的各种故事，主人公是顽皮的麻小凡，在他某天偷偷溜出精灵村之后，而引发的一系列事件","好看","梁小龙，张智霖，成龙");
-insert into location values(8,"成都新都广场101号新都影院4楼","11 月 20","横店影视","成都市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c,"50","101 分钟","国语","10 号厅");
-insert into galleryuri values(8,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2F03087bf40ad162d955cc2fb017dfa9ec8a13cd78&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870564&t=9bfffad5f94be741c30598cc96e02c9d");
-insert into actosuri values(8,"https://t11.baidu.com/it/u=1405908883,177816701&fm=30&app=106&f=JPEG?w=640&h=960&s=D4E29B565A1A4BD8063FFEAD0300E00D");
-insert into actosuri values(8,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp1.itc.cn%2Fq_70%2Fimages03%2F20221124%2Fec850ef911904073a2ce8f238cf9a922.jpeg&refer=http%3A%2F%2Fp1.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870634&t=3063bae91ae48671772488b1016a7441");
-insert into actosuri values(8,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp4.itc.cn%2Fq_70%2Fimages03%2F20221124%2Fece863f800174451ab98a7ba6ede54b4.jpeg&refer=http%3A%2F%2Fp4.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870680&t=26a690a1e687c2ca23da636477db5baf");
-insert into seats values(8,"成都新都广场101号新都影院4楼","");
-insert into comment values(8,"黄子华","黄子华 8888888");
-insert into comment values(8,"邓丽欣","邓丽欣 8888888");
+insert into movie values(23,"功夫精灵","功夫精灵",8,"2022-11-10","28");
+insert into classify values(23,"剧情","大陆","2022");
+insert into description values(23,"讲述了在一群生活在武术精灵村孩子们，以及他们在生活中的各种故事，主人公是顽皮的麻小凡，在他某天偷偷溜出精灵村之后，而引发的一系列事件","好看","梁小龙，张智霖，成龙");
+insert into location values(23,"成都新都广场101号新都影院4楼","11 月 20","横店影视","成都市","杜比全景声厅","可改签","https://p0.meituan.net/mmdb/fd146c7848a0ebca36eb869dfef7c9331034607.png@292w_292h_1e_1c","50","101 分钟","国语","10 号厅");
+insert into galleryuri values(23,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbkimg.cdn.bcebos.com%2Fpic%2F03087bf40ad162d955cc2fb017dfa9ec8a13cd78&refer=http%3A%2F%2Fbkimg.cdn.bcebos.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870564&t=9bfffad5f94be741c30598cc96e02c9d");
+insert into actosuri values(23,"https://t11.baidu.com/it/u=1405908883,177816701&fm=30&app=106&f=JPEG?w=640&h=960&s=D4E29B565A1A4BD8063FFEAD0300E00D");
+insert into actosuri values(23,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp1.itc.cn%2Fq_70%2Fimages03%2F20221124%2Fec850ef911904073a2ce8f238cf9a922.jpeg&refer=http%3A%2F%2Fp1.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870634&t=3063bae91ae48671772488b1016a7441");
+insert into actosuri values(23,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp4.itc.cn%2Fq_70%2Fimages03%2F20221124%2Fece863f800174451ab98a7ba6ede54b4.jpeg&refer=http%3A%2F%2Fp4.itc.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1671870680&t=26a690a1e687c2ca23da636477db5baf");
+insert into seats values(23,"成都新都广场101号新都影院4楼","");
+insert into comment values(23,"黄子华","黄子华 8888888");
+insert into comment values(23,"邓丽欣","邓丽欣 8888888");
 
 insert into movie values(9,"无名","101分钟",10,"2022-11-10","44");
 insert into classify values(9,"剧情","大陆","2022");

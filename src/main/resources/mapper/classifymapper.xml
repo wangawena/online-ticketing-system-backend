@@ -12,4 +12,8 @@
     <delete id="deleteById">
         delete from classify where id=#{id};
     </delete>
+
+    <insert id="insertClassifyById">
+        insert into classify values(#{id},#{classify.type},#{classify.region},#{classify.period});
+    </insert>
 </mapper>

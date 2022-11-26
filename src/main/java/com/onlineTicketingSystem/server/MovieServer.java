@@ -11,4 +11,6 @@ public interface MovieServer {
 
 
     public void deleteById(int id);
+
+    public void addMovie(Moive moive);
 }

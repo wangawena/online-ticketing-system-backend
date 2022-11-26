@@ -10,4 +10,6 @@ public interface ClassifyServer {
 
 
     public void deleteById(int id);
+
+    public void insertById(int id,Classify classify);
 }

@@ -3,10 +3,7 @@ package com.onlineTicketingSystem.controller;
 import com.onlineTicketingSystem.pojo.*;
 import com.onlineTicketingSystem.server.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -97,6 +94,17 @@ public class MovieController {
         movieServer.deleteById(id);
         result.setMsg("删除成功");
         result.setCode(200);
+        return result;
+    }
+
+
+    @PostMapping("/addMovie")
+    public Result addMovie(@RequestBody Moive moive)
+    {
+        Result result=new Result();
+        movieServer.addMovie(moive);
+        result.setCode(200);
+        result.setMsg("插入成功");
         return result;
     }
 }

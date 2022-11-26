@@ -7,8 +7,10 @@ public class Description {
     private List<String> actor;//演员图片
     private List<String> gallery;//电影海报
     private String text;//电影简介
-    private List<Comment> comments;//电影评论
+    private List<Comment> comments;//电影评论 //似乎以废弃
     private String actors;//演员列表
+
+
 
     public List<String> getGallery() {
         return gallery;

@@ -14,4 +14,8 @@ public interface MovieDao {
 
 
     public void deleteById(int id);
+
+    public void insertMovie(Moive moive);
+
+    public int findIdByName(String name);
 }

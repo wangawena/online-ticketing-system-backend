@@ -27,4 +27,9 @@ public class GalleryuriServerImpl  implements GalleryuriServer {
     public void deleteById(int id) {
         galleryuriDao.deleteById(id);
     }
+
+    @Override
+    public void insertById(int id, List<String> gallery) {
+        galleryuriDao.insertById(id,gallery);
+    }
 }

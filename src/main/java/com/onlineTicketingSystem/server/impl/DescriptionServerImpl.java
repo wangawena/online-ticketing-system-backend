@@ -44,4 +44,14 @@ public class DescriptionServerImpl implements DescriptionServer {
         //删除电影评论
         commentDao.deleteById(id);
     }
+
+    @Override
+    public void insertById(int id, Description description) {
+        //插入演员图片
+        actosuriDao.insertById(id,description.getActor());
+        //插入电影海报
+        galleryuriDao.insertById(id,description.getGallery());
+        //插入简介、演员列表
+        descriptionDao.insertById(id,description);
+    }
 }

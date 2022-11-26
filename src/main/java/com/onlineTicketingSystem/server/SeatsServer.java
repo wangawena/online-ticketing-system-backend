@@ -1,5 +1,7 @@
 package com.onlineTicketingSystem.server;
 
+import com.onlineTicketingSystem.pojo.Moive;
+
 public interface SeatsServer {
 
 
@@ -9,5 +11,6 @@ public interface SeatsServer {
 
 
     public void updateById(int id, String information,String seat);
+
 
 }
